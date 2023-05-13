@@ -13,6 +13,20 @@
 		E8BF3AAE2A0FEBD900F0D97A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8BF3AAC2A0FEBD900F0D97A /* Main.storyboard */; };
 		E8BF3AB02A0FEBDB00F0D97A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8BF3AAF2A0FEBDB00F0D97A /* Assets.xcassets */; };
 		E8BF3AB32A0FEBDB00F0D97A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8BF3AB12A0FEBDB00F0D97A /* LaunchScreen.storyboard */; };
+		E8BF3AC22A0FF4DA00F0D97A /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8BF3ABB2A0FF4DA00F0D97A /* Poppins-Medium.ttf */; };
+		E8BF3AC32A0FF4DA00F0D97A /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8BF3ABC2A0FF4DA00F0D97A /* Poppins-Regular.ttf */; };
+		E8BF3AC42A0FF4DA00F0D97A /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8BF3ABD2A0FF4DA00F0D97A /* Poppins-ExtraLight.ttf */; };
+		E8BF3AC52A0FF4DA00F0D97A /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8BF3ABE2A0FF4DA00F0D97A /* Poppins-Bold.ttf */; };
+		E8BF3AC62A0FF4DA00F0D97A /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8BF3ABF2A0FF4DA00F0D97A /* Poppins-Black.ttf */; };
+		E8BF3AC72A0FF4DA00F0D97A /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8BF3AC02A0FF4DA00F0D97A /* Poppins-ExtraBold.ttf */; };
+		E8BF3AC82A0FF4DA00F0D97A /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8BF3AC12A0FF4DA00F0D97A /* Poppins-Light.ttf */; };
+		E8BF3AD02A0FF4E700F0D97A /* Tajawal-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8BF3AC92A0FF4E600F0D97A /* Tajawal-ExtraBold.ttf */; };
+		E8BF3AD12A0FF4E700F0D97A /* Tajawal-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8BF3ACA2A0FF4E600F0D97A /* Tajawal-Black.ttf */; };
+		E8BF3AD22A0FF4E700F0D97A /* Tajawal-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8BF3ACB2A0FF4E600F0D97A /* Tajawal-Regular.ttf */; };
+		E8BF3AD32A0FF4E700F0D97A /* Tajawal-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8BF3ACC2A0FF4E600F0D97A /* Tajawal-Medium.ttf */; };
+		E8BF3AD42A0FF4E700F0D97A /* Tajawal-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8BF3ACD2A0FF4E700F0D97A /* Tajawal-ExtraLight.ttf */; };
+		E8BF3AD52A0FF4E700F0D97A /* Tajawal-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8BF3ACE2A0FF4E700F0D97A /* Tajawal-Bold.ttf */; };
+		E8BF3AD62A0FF4E700F0D97A /* Tajawal-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8BF3ACF2A0FF4E700F0D97A /* Tajawal-Light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +38,20 @@
 		E8BF3AAF2A0FEBDB00F0D97A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8BF3AB22A0FEBDB00F0D97A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8BF3AB42A0FEBDB00F0D97A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8BF3ABB2A0FF4DA00F0D97A /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		E8BF3ABC2A0FF4DA00F0D97A /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		E8BF3ABD2A0FF4DA00F0D97A /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		E8BF3ABE2A0FF4DA00F0D97A /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		E8BF3ABF2A0FF4DA00F0D97A /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
+		E8BF3AC02A0FF4DA00F0D97A /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		E8BF3AC12A0FF4DA00F0D97A /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		E8BF3AC92A0FF4E600F0D97A /* Tajawal-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-ExtraBold.ttf"; sourceTree = "<group>"; };
+		E8BF3ACA2A0FF4E600F0D97A /* Tajawal-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Black.ttf"; sourceTree = "<group>"; };
+		E8BF3ACB2A0FF4E600F0D97A /* Tajawal-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Regular.ttf"; sourceTree = "<group>"; };
+		E8BF3ACC2A0FF4E600F0D97A /* Tajawal-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Medium.ttf"; sourceTree = "<group>"; };
+		E8BF3ACD2A0FF4E700F0D97A /* Tajawal-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-ExtraLight.ttf"; sourceTree = "<group>"; };
+		E8BF3ACE2A0FF4E700F0D97A /* Tajawal-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Bold.ttf"; sourceTree = "<group>"; };
+		E8BF3ACF2A0FF4E700F0D97A /* Tajawal-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Light.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +84,7 @@
 		E8BF3AA52A0FEBD900F0D97A /* menodag */ = {
 			isa = PBXGroup;
 			children = (
+				E8BF3ABA2A0FF4A600F0D97A /* Fonts */,
 				E8BF3AA62A0FEBD900F0D97A /* AppDelegate.swift */,
 				E8BF3AA82A0FEBD900F0D97A /* SceneDelegate.swift */,
 				E8BF3AAA2A0FEBD900F0D97A /* ViewController.swift */,
@@ -65,6 +94,27 @@
 				E8BF3AB42A0FEBDB00F0D97A /* Info.plist */,
 			);
 			path = menodag;
+			sourceTree = "<group>";
+		};
+		E8BF3ABA2A0FF4A600F0D97A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E8BF3ABF2A0FF4DA00F0D97A /* Poppins-Black.ttf */,
+				E8BF3ABE2A0FF4DA00F0D97A /* Poppins-Bold.ttf */,
+				E8BF3AC02A0FF4DA00F0D97A /* Poppins-ExtraBold.ttf */,
+				E8BF3ABD2A0FF4DA00F0D97A /* Poppins-ExtraLight.ttf */,
+				E8BF3AC12A0FF4DA00F0D97A /* Poppins-Light.ttf */,
+				E8BF3ABB2A0FF4DA00F0D97A /* Poppins-Medium.ttf */,
+				E8BF3ABC2A0FF4DA00F0D97A /* Poppins-Regular.ttf */,
+				E8BF3ACA2A0FF4E600F0D97A /* Tajawal-Black.ttf */,
+				E8BF3ACE2A0FF4E700F0D97A /* Tajawal-Bold.ttf */,
+				E8BF3AC92A0FF4E600F0D97A /* Tajawal-ExtraBold.ttf */,
+				E8BF3ACD2A0FF4E700F0D97A /* Tajawal-ExtraLight.ttf */,
+				E8BF3ACF2A0FF4E700F0D97A /* Tajawal-Light.ttf */,
+				E8BF3ACC2A0FF4E600F0D97A /* Tajawal-Medium.ttf */,
+				E8BF3ACB2A0FF4E600F0D97A /* Tajawal-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +175,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8BF3AC62A0FF4DA00F0D97A /* Poppins-Black.ttf in Resources */,
+				E8BF3AC82A0FF4DA00F0D97A /* Poppins-Light.ttf in Resources */,
+				E8BF3AC72A0FF4DA00F0D97A /* Poppins-ExtraBold.ttf in Resources */,
+				E8BF3AD42A0FF4E700F0D97A /* Tajawal-ExtraLight.ttf in Resources */,
+				E8BF3AD22A0FF4E700F0D97A /* Tajawal-Regular.ttf in Resources */,
+				E8BF3AD32A0FF4E700F0D97A /* Tajawal-Medium.ttf in Resources */,
+				E8BF3AD12A0FF4E700F0D97A /* Tajawal-Black.ttf in Resources */,
+				E8BF3AC42A0FF4DA00F0D97A /* Poppins-ExtraLight.ttf in Resources */,
 				E8BF3AB32A0FEBDB00F0D97A /* LaunchScreen.storyboard in Resources */,
+				E8BF3AC52A0FF4DA00F0D97A /* Poppins-Bold.ttf in Resources */,
+				E8BF3AC22A0FF4DA00F0D97A /* Poppins-Medium.ttf in Resources */,
+				E8BF3AD02A0FF4E700F0D97A /* Tajawal-ExtraBold.ttf in Resources */,
+				E8BF3AD62A0FF4E700F0D97A /* Tajawal-Light.ttf in Resources */,
 				E8BF3AB02A0FEBDB00F0D97A /* Assets.xcassets in Resources */,
 				E8BF3AAE2A0FEBD900F0D97A /* Main.storyboard in Resources */,
+				E8BF3AD52A0FF4E700F0D97A /* Tajawal-Bold.ttf in Resources */,
+				E8BF3AC32A0FF4DA00F0D97A /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
