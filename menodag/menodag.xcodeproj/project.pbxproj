@@ -27,6 +27,8 @@
 		E8BF3AD42A0FF4E700F0D97A /* Tajawal-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8BF3ACD2A0FF4E700F0D97A /* Tajawal-ExtraLight.ttf */; };
 		E8BF3AD52A0FF4E700F0D97A /* Tajawal-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8BF3ACE2A0FF4E700F0D97A /* Tajawal-Bold.ttf */; };
 		E8BF3AD62A0FF4E700F0D97A /* Tajawal-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8BF3ACF2A0FF4E700F0D97A /* Tajawal-Light.ttf */; };
+		E8BF3AD92A10B0C400F0D97A /* Localize_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = E8BF3AD82A10B0C400F0D97A /* Localize_Swift */; };
+		E8BF3ADB2A10B0CF00F0D97A /* MenodagFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF3ADA2A10B0CF00F0D97A /* MenodagFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,7 @@
 		E8BF3ACD2A0FF4E700F0D97A /* Tajawal-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-ExtraLight.ttf"; sourceTree = "<group>"; };
 		E8BF3ACE2A0FF4E700F0D97A /* Tajawal-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Bold.ttf"; sourceTree = "<group>"; };
 		E8BF3ACF2A0FF4E700F0D97A /* Tajawal-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Light.ttf"; sourceTree = "<group>"; };
+		E8BF3ADA2A10B0CF00F0D97A /* MenodagFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenodagFont.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8BF3AD92A10B0C400F0D97A /* Localize_Swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +117,7 @@
 				E8BF3ACF2A0FF4E700F0D97A /* Tajawal-Light.ttf */,
 				E8BF3ACC2A0FF4E600F0D97A /* Tajawal-Medium.ttf */,
 				E8BF3ACB2A0FF4E600F0D97A /* Tajawal-Regular.ttf */,
+				E8BF3ADA2A10B0CF00F0D97A /* MenodagFont.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -133,6 +138,9 @@
 			dependencies = (
 			);
 			name = menodag;
+			packageProductDependencies = (
+				E8BF3AD82A10B0C400F0D97A /* Localize_Swift */,
+			);
 			productName = menodag;
 			productReference = E8BF3AA32A0FEBD900F0D97A /* menodag.app */;
 			productType = "com.apple.product-type.application";
@@ -161,6 +169,9 @@
 				Base,
 			);
 			mainGroup = E8BF3A9A2A0FEBD900F0D97A;
+			packageReferences = (
+				E8BF3AD72A10B0C400F0D97A /* XCRemoteSwiftPackageReference "Localize-Swift" */,
+			);
 			productRefGroup = E8BF3AA42A0FEBD900F0D97A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -203,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8BF3AAB2A0FEBD900F0D97A /* ViewController.swift in Sources */,
+				E8BF3ADB2A10B0CF00F0D97A /* MenodagFont.swift in Sources */,
 				E8BF3AA72A0FEBD900F0D97A /* AppDelegate.swift in Sources */,
 				E8BF3AA92A0FEBD900F0D97A /* SceneDelegate.swift in Sources */,
 			);
@@ -428,6 +440,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E8BF3AD72A10B0C400F0D97A /* XCRemoteSwiftPackageReference "Localize-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Localize-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E8BF3AD82A10B0C400F0D97A /* Localize_Swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8BF3AD72A10B0C400F0D97A /* XCRemoteSwiftPackageReference "Localize-Swift" */;
+			productName = Localize_Swift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E8BF3A9B2A0FEBD900F0D97A /* Project object */;
 }
