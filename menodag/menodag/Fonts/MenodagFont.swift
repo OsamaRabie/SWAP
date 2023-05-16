@@ -6,8 +6,7 @@
 //
 
 import UIKit
-import Localize_Swift
-
+import MOLH
 /// Defines the list of font names used by the app in both languages
 enum MenodagFont:String, CaseIterable {
     
@@ -34,12 +33,10 @@ extension MenodagFont {
     /// - Parameter with size: The required size for the font
     /// - returns : The localized font based on the locale & the required size
     static func localizedFont(for englishFont:MenodagFont, with size:CGFloat) -> UIFont {
-        // get the locale
-        let currentLocale:String = Localize.currentLanguage()
         
         // compute the correct font name based on the locale
         var correctFontName:String = englishFont.rawValue
-        if currentLocale.lowercased() == "ar" {
+        if MOLHLanguage.isArabic() {
             // This means it is arabic and we need to get the arabic font name from the english font name
             correctFontName = MenodagFont.mapArabicFont(from: englishFont).rawValue
         }

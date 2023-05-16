@@ -29,6 +29,9 @@
 		E8BF3AD62A0FF4E700F0D97A /* Tajawal-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8BF3ACF2A0FF4E700F0D97A /* Tajawal-Light.ttf */; };
 		E8BF3AD92A10B0C400F0D97A /* Localize_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = E8BF3AD82A10B0C400F0D97A /* Localize_Swift */; };
 		E8BF3ADB2A10B0CF00F0D97A /* MenodagFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF3ADA2A10B0CF00F0D97A /* MenodagFont.swift */; };
+		E8BF3AE22A12111F00F0D97A /* localisation.json in Resources */ = {isa = PBXBuildFile; fileRef = E8BF3AE12A12111F00F0D97A /* localisation.json */; };
+		E8BF3AE42A12152800F0D97A /* LocalisationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF3AE32A12152800F0D97A /* LocalisationModel.swift */; };
+		E8BF3AE72A12273800F0D97A /* MOLH in Frameworks */ = {isa = PBXBuildFile; productRef = E8BF3AE62A12273800F0D97A /* MOLH */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +58,8 @@
 		E8BF3ACE2A0FF4E700F0D97A /* Tajawal-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Bold.ttf"; sourceTree = "<group>"; };
 		E8BF3ACF2A0FF4E700F0D97A /* Tajawal-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Tajawal-Light.ttf"; sourceTree = "<group>"; };
 		E8BF3ADA2A10B0CF00F0D97A /* MenodagFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenodagFont.swift; sourceTree = "<group>"; };
+		E8BF3AE12A12111F00F0D97A /* localisation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = localisation.json; sourceTree = "<group>"; };
+		E8BF3AE32A12152800F0D97A /* LocalisationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalisationModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8BF3AE72A12273800F0D97A /* MOLH in Frameworks */,
 				E8BF3AD92A10B0C400F0D97A /* Localize_Swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,10 +94,11 @@
 		E8BF3AA52A0FEBD900F0D97A /* menodag */ = {
 			isa = PBXGroup;
 			children = (
+				E8BF3AE82A12373100F0D97A /* GetStartedScreen */,
+				E8BF3AE02A12110100F0D97A /* Localisation */,
 				E8BF3ABA2A0FF4A600F0D97A /* Fonts */,
 				E8BF3AA62A0FEBD900F0D97A /* AppDelegate.swift */,
 				E8BF3AA82A0FEBD900F0D97A /* SceneDelegate.swift */,
-				E8BF3AAA2A0FEBD900F0D97A /* ViewController.swift */,
 				E8BF3AAC2A0FEBD900F0D97A /* Main.storyboard */,
 				E8BF3AAF2A0FEBDB00F0D97A /* Assets.xcassets */,
 				E8BF3AB12A0FEBDB00F0D97A /* LaunchScreen.storyboard */,
@@ -122,6 +129,23 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		E8BF3AE02A12110100F0D97A /* Localisation */ = {
+			isa = PBXGroup;
+			children = (
+				E8BF3AE12A12111F00F0D97A /* localisation.json */,
+				E8BF3AE32A12152800F0D97A /* LocalisationModel.swift */,
+			);
+			path = Localisation;
+			sourceTree = "<group>";
+		};
+		E8BF3AE82A12373100F0D97A /* GetStartedScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E8BF3AAA2A0FEBD900F0D97A /* ViewController.swift */,
+			);
+			path = GetStartedScreen;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,6 +164,7 @@
 			name = menodag;
 			packageProductDependencies = (
 				E8BF3AD82A10B0C400F0D97A /* Localize_Swift */,
+				E8BF3AE62A12273800F0D97A /* MOLH */,
 			);
 			productName = menodag;
 			productReference = E8BF3AA32A0FEBD900F0D97A /* menodag.app */;
@@ -171,6 +196,7 @@
 			mainGroup = E8BF3A9A2A0FEBD900F0D97A;
 			packageReferences = (
 				E8BF3AD72A10B0C400F0D97A /* XCRemoteSwiftPackageReference "Localize-Swift" */,
+				E8BF3AE52A12273800F0D97A /* XCRemoteSwiftPackageReference "MOLH" */,
 			);
 			productRefGroup = E8BF3AA42A0FEBD900F0D97A /* Products */;
 			projectDirPath = "";
@@ -203,6 +229,7 @@
 				E8BF3AAE2A0FEBD900F0D97A /* Main.storyboard in Resources */,
 				E8BF3AD52A0FF4E700F0D97A /* Tajawal-Bold.ttf in Resources */,
 				E8BF3AC32A0FF4DA00F0D97A /* Poppins-Regular.ttf in Resources */,
+				E8BF3AE22A12111F00F0D97A /* localisation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +244,7 @@
 				E8BF3ADB2A10B0CF00F0D97A /* MenodagFont.swift in Sources */,
 				E8BF3AA72A0FEBD900F0D97A /* AppDelegate.swift in Sources */,
 				E8BF3AA92A0FEBD900F0D97A /* SceneDelegate.swift in Sources */,
+				E8BF3AE42A12152800F0D97A /* LocalisationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,6 +478,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		E8BF3AE52A12273800F0D97A /* XCRemoteSwiftPackageReference "MOLH" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MoathOthman/MOLH.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -457,6 +493,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E8BF3AD72A10B0C400F0D97A /* XCRemoteSwiftPackageReference "Localize-Swift" */;
 			productName = Localize_Swift;
+		};
+		E8BF3AE62A12273800F0D97A /* MOLH */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E8BF3AE52A12273800F0D97A /* XCRemoteSwiftPackageReference "MOLH" */;
+			productName = MOLH;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

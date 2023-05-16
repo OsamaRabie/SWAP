@@ -1,24 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="menodag" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppBackground" translatesAutoresizingMaskIntoConstraints="NO" id="kBA-Tt-3wh">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Started" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFD-fB-gK7">
+                                <rect key="frame" x="18" y="94" width="357" height="38.333333333333343"/>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" name="AppBlackColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet conse cumsan integer pulvinar eget ipsum vulputate" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oyp-Zj-BCE">
+                                <rect key="frame" x="18" y="147.33333333333334" width="357" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" name="AppGreyColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LtK-u5-IHT">
+                                <rect key="frame" x="18" y="215" width="357" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="MtD-JT-IEu"/>
+                                </constraints>
+                                <color key="textColor" name="AppBlackColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="email"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mdo-gb-Z13">
+                                <rect key="frame" x="18" y="285" width="357" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="fIq-fr-Zaa"/>
+                                </constraints>
+                                <color key="textColor" name="AppBlackColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="email"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="24"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gFD-fB-gK7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="18" id="1iz-MN-G4H"/>
+                            <constraint firstItem="Mdo-gb-Z13" firstAttribute="leading" secondItem="LtK-u5-IHT" secondAttribute="leading" id="4NQ-ec-cVK"/>
+                            <constraint firstItem="Oyp-Zj-BCE" firstAttribute="top" secondItem="gFD-fB-gK7" secondAttribute="bottom" constant="15" id="5HL-3S-MXX"/>
+                            <constraint firstItem="LtK-u5-IHT" firstAttribute="leading" secondItem="Oyp-Zj-BCE" secondAttribute="leading" id="5wa-8U-CCA"/>
+                            <constraint firstItem="kBA-Tt-3wh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="61y-eb-y3G"/>
+                            <constraint firstAttribute="bottom" secondItem="kBA-Tt-3wh" secondAttribute="bottom" id="CNC-iu-SSw"/>
+                            <constraint firstItem="LtK-u5-IHT" firstAttribute="trailing" secondItem="Oyp-Zj-BCE" secondAttribute="trailing" id="Cic-9X-Rh0"/>
+                            <constraint firstItem="gFD-fB-gK7" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="94" id="HJ2-mN-GBM"/>
+                            <constraint firstItem="Oyp-Zj-BCE" firstAttribute="trailing" secondItem="gFD-fB-gK7" secondAttribute="trailing" id="JJI-Wf-01z"/>
+                            <constraint firstItem="Oyp-Zj-BCE" firstAttribute="leading" secondItem="gFD-fB-gK7" secondAttribute="leading" id="JtQ-bt-zDe"/>
+                            <constraint firstItem="Mdo-gb-Z13" firstAttribute="top" secondItem="LtK-u5-IHT" secondAttribute="bottom" constant="14" id="NGK-Ai-fqC"/>
+                            <constraint firstItem="LtK-u5-IHT" firstAttribute="top" secondItem="Oyp-Zj-BCE" secondAttribute="bottom" constant="34" id="aJJ-46-aJB"/>
+                            <constraint firstItem="kBA-Tt-3wh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="aYi-bR-duJ"/>
+                            <constraint firstAttribute="trailing" secondItem="gFD-fB-gK7" secondAttribute="trailing" constant="18" id="inY-ny-whN"/>
+                            <constraint firstItem="Mdo-gb-Z13" firstAttribute="trailing" secondItem="LtK-u5-IHT" secondAttribute="trailing" id="oYy-7B-jUh"/>
+                            <constraint firstItem="kBA-Tt-3wh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zxt-ed-qEI"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="LtK-u5-IHT" id="40B-iq-aq5"/>
+                        <outlet property="headerTitleLabel" destination="gFD-fB-gK7" id="Mwp-cH-ADq"/>
+                        <outlet property="passwordTextField" destination="Mdo-gb-Z13" id="LEM-4b-sQw"/>
+                        <outlet property="subHeaderTitleLabel" destination="Oyp-Zj-BCE" id="TWA-g6-XjQ"/>
+                        <outletCollection property="toBeLocalizedViews" destination="gFD-fB-gK7" collectionClass="NSMutableArray" id="YjD-KA-P8w"/>
+                        <outletCollection property="toBeLocalizedViews" destination="Oyp-Zj-BCE" collectionClass="NSMutableArray" id="Udb-OO-2co"/>
+                        <outletCollection property="toBeLocalizedViews" destination="LtK-u5-IHT" collectionClass="NSMutableArray" id="f6F-1N-54l"/>
+                        <outletCollection property="toBeLocalizedViews" destination="Mdo-gb-Z13" collectionClass="NSMutableArray" id="a7E-ws-L0J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="46.564885496183201" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AppBackground" width="390" height="844"/>
+        <namedColor name="AppBlackColor">
+            <color red="0.016000000759959221" green="0.027000000700354576" blue="0.067000001668930054" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="AppGreyColor">
+            <color red="0.63099998235702515" green="0.63099998235702515" blue="0.63099998235702515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -1,0 +1,32 @@
+{
+    "en": {
+        "getStarted": {
+            "header": "Get Started",
+            "subHeader": "Welcome in the new digital world. Find anyone in Kuwait 🇰🇼",
+            "forgorPassword": "Forgot password?",
+            "loginWithOptions": "Or continue with"
+        },
+        "buttonTitles": {
+            "continue": "Continue"
+        },
+        "textFieldPlaceHolders": {
+            "email": "Email address",
+            "password": "Password"
+        }
+    },
+    "ar": {
+        "getStarted": {
+            "header": "لنبدأ",
+            "subHeader": "مرحبًا بك في العالم الرقمي الجديد. ابحث عن أي شخص في الكويت 🇰🇼",
+            "forgorPassword": "هل نسيت كلمة السر؟",
+            "loginWithOptions": "أو تواصل مع"
+        },
+        "buttonTitles": {
+            "continue": "إستمرار"
+        },
+        "textFieldPlaceHolders": {
+            "email": "البريد الإلكتروني",
+            "password": "كلمة السر"
+        }
+    }
+}
