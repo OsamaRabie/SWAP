@@ -318,7 +318,8 @@ extension ViewController: ASAuthorizationControllerDelegate {
             }
             
             // We have a valid email :)
-            self.view.showError(title: "Signed in", message: "EMAIL IS :\(nonNullEmail)", messageType: .Message)
+            let personalInfoController:PersonalInfoViewController = storyboard?.instantiateViewController(withIdentifier: "PersonalInfoViewController") as! PersonalInfoViewController
+            navigationController?.pushViewController(personalInfoController, animated: true)
         }
     }
     

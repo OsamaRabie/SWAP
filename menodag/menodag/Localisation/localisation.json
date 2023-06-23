@@ -15,14 +15,22 @@
             "resend": "Didn't get a verification code?",
             "actionButton": "Confirm"
         },
+        "personalInfoScreen": {
+            "header": "Add your personal info",
+            "subHeader": "Please add your basic information."
+        },
         "buttonTitles": {
             "continue": "Continue",
-            "cancel": "Cancel"
+            "cancel": "Cancel",
+            "complete": "Complete"
         },
         "textFieldPlaceHolders": {
             "email": "Email address",
             "phone": "Phone number +965XXXXXXXX",
-            "password": "Password"
+            "firstName": "First name",
+            "lastName": "Last name",
+            "password": "Password",
+            "userName": "Username"
         },
         "languagePicker":{
             "title":"Language",
@@ -50,14 +58,22 @@
             "resend": "لم تصل الرسالة؟",
             "actionButton": "تأكيد"
         },
+        "personalInfoScreen": {
+            "header": "معلوماتك المهنية",
+            "subHeader": "برجاء إضافة المعلومات المهنية الرئيسية"
+        },
         "buttonTitles": {
             "continue": "إستمرار",
-            "cancel": "إلغاء"
+            "cancel": "إلغاء",
+            "complete": "إستكمال"
         },
         "textFieldPlaceHolders": {
             "email": "البريد الإلكتروني",
             "phone": "رقم الهاتف  +965XXXXXXXX",
-            "password": "كلمة السر"
+            "firstName": "الإسم الأول",
+            "lastName": "الإسم الأخير",
+            "password": "كلمة السر",
+            "userName":"إسم المستخدم"
         },
         "languagePicker":{
             "title":"اللغة",

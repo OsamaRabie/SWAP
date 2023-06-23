@@ -25,6 +25,7 @@
 		E86E17C32A19410B0053A1E9 /* Menodag+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E17C22A19410B0053A1E9 /* Menodag+View.swift */; };
 		E86E17C62A1949440053A1E9 /* UIGradient in Frameworks */ = {isa = PBXBuildFile; productRef = E86E17C52A1949440053A1E9 /* UIGradient */; };
 		E86E17C82A194A780053A1E9 /* Menodag+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E17C72A194A780053A1E9 /* Menodag+UIColor.swift */; };
+		E891713F2A45BB8A000223C2 /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891713E2A45BB8A000223C2 /* PersonalInfoViewController.swift */; };
 		E8BF3AA72A0FEBD900F0D97A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF3AA62A0FEBD900F0D97A /* AppDelegate.swift */; };
 		E8BF3AA92A0FEBD900F0D97A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF3AA82A0FEBD900F0D97A /* SceneDelegate.swift */; };
 		E8BF3AAB2A0FEBD900F0D97A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF3AAA2A0FEBD900F0D97A /* ViewController.swift */; };
@@ -62,6 +63,7 @@
 		E86E17C02A1940A40053A1E9 /* Menodag+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Menodag+String.swift"; sourceTree = "<group>"; };
 		E86E17C22A19410B0053A1E9 /* Menodag+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Menodag+View.swift"; sourceTree = "<group>"; };
 		E86E17C72A194A780053A1E9 /* Menodag+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Menodag+UIColor.swift"; sourceTree = "<group>"; };
+		E891713E2A45BB8A000223C2 /* PersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewController.swift; sourceTree = "<group>"; };
 		E8BF3AA32A0FEBD900F0D97A /* menodag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = menodag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BF3AA62A0FEBD900F0D97A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8BF3AA82A0FEBD900F0D97A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E891713D2A45BB78000223C2 /* PersonalInfo */ = {
+			isa = PBXGroup;
+			children = (
+				E891713E2A45BB8A000223C2 /* PersonalInfoViewController.swift */,
+			);
+			path = PersonalInfo;
+			sourceTree = "<group>";
+		};
 		E8BF3A9A2A0FEBD900F0D97A = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +163,7 @@
 		E8BF3AA52A0FEBD900F0D97A /* menodag */ = {
 			isa = PBXGroup;
 			children = (
+				E891713D2A45BB78000223C2 /* PersonalInfo */,
 				E86E17BF2A1940950053A1E9 /* Extensions */,
 				E86E17BD2A18F7DA0053A1E9 /* GoogleService-Info.plist */,
 				E86E17A92A18D80B0053A1E9 /* menodag.entitlements */,
@@ -326,6 +337,7 @@
 				E8BF3ADB2A10B0CF00F0D97A /* MenodagFont.swift in Sources */,
 				E83A6AA02A34296A0074D2F8 /* Swap + FirebaseUsers.swift in Sources */,
 				E8BF3AA72A0FEBD900F0D97A /* AppDelegate.swift in Sources */,
+				E891713F2A45BB8A000223C2 /* PersonalInfoViewController.swift in Sources */,
 				E83A6A9D2A33456B0074D2F8 /* JWTDecodeError.swift in Sources */,
 				E8BF3AA92A0FEBD900F0D97A /* SceneDelegate.swift in Sources */,
 				E83A6A9C2A33456B0074D2F8 /* JWTDecode.swift in Sources */,
