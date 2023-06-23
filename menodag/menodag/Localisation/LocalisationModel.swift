@@ -59,6 +59,7 @@ extension Localisation {
 // MARK: - Ar
 struct Ar: Codable {
     let getStarted: GetStarted
+    let otpScreen: OtpScreen
     let buttonTitles: ButtonTitles
     let textFieldPlaceHolders: TextFieldPlaceHolders
     let languagePicker: LanguagePicker
@@ -85,6 +86,7 @@ extension Ar {
     
     func with(
         getStarted: GetStarted? = nil,
+        otpScreen: OtpScreen?  = nil,
         buttonTitles: ButtonTitles? = nil,
         textFieldPlaceHolders: TextFieldPlaceHolders? = nil,
         languagePicker: LanguagePicker? = nil,
@@ -92,6 +94,7 @@ extension Ar {
     ) -> Ar {
         return Ar(
             getStarted: getStarted ?? self.getStarted,
+            otpScreen: otpScreen ?? self.otpScreen,
             buttonTitles: buttonTitles ?? self.buttonTitles,
             textFieldPlaceHolders: textFieldPlaceHolders ?? self.textFieldPlaceHolders,
             languagePicker: languagePicker ?? self.languagePicker,
@@ -183,6 +186,56 @@ extension Errors {
     ) -> Errors {
         return Errors(
             signWithPhoneError: signWithPhoneError ?? self.signWithPhoneError
+        )
+    }
+    
+    func jsonData() throws -> Data {
+        return try newJSONEncoder().encode(self)
+    }
+    
+    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
+        return String(data: try self.jsonData(), encoding: encoding)
+    }
+}
+
+
+// MARK: - OtpScreen
+struct OtpScreen: Codable {
+    let header, title, message, resend: String
+    let actionButton: String
+}
+
+// MARK: OtpScreen convenience initializers and mutators
+
+extension OtpScreen {
+    init(data: Data) throws {
+        self = try newJSONDecoder().decode(OtpScreen.self, from: data)
+    }
+    
+    init(_ json: String, using encoding: String.Encoding = .utf8) throws {
+        guard let data = json.data(using: encoding) else {
+            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
+        }
+        try self.init(data: data)
+    }
+    
+    init(fromURL url: URL) throws {
+        try self.init(data: try Data(contentsOf: url))
+    }
+    
+    func with(
+        header: String? = nil,
+        title: String? = nil,
+        message: String? = nil,
+        resend: String? = nil,
+        actionButton: String? = nil
+    ) -> OtpScreen {
+        return OtpScreen(
+            header: header ?? self.header,
+            title: title ?? self.title,
+            message: message ?? self.message,
+            resend: resend ?? self.resend,
+            actionButton: actionButton ?? self.actionButton
         )
     }
     

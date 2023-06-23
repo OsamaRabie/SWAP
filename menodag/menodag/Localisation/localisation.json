@@ -8,6 +8,13 @@
             "termsConditions":"by Signing up you will agree to our\nTerms & Conditions",
             "orContinueWith":"or Continue with"
         },
+        "otpScreen":{
+            "header": "Verify your phone",
+            "title": "Enter One Time Code",
+            "message": "You will recieve a SMS with a 6 digits code.",
+            "resend": "Didn't get a verification code?",
+            "actionButton": "Confirm"
+        },
         "buttonTitles": {
             "continue": "Continue",
             "cancel": "Cancel"
@@ -35,6 +42,13 @@
             "loginWithOptions": "أو تواصل مع",
             "termsConditions":"بالتسجيل فإنك توافق على\nالشروط والأحكام",
             "orContinueWith":"أو سجل الدخول بـ"
+        },
+        "otpScreen":{
+            "header": "التحقق من الرقم",
+            "title": "أدخل الكود",
+            "message": "ستتلفى رساله بالكود.",
+            "resend": "لم تصل الرسالة؟",
+            "actionButton": "تأكيد"
         },
         "buttonTitles": {
             "continue": "إستمرار",

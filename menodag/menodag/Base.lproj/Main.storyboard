@@ -131,7 +131,7 @@ Terms &amp; Conditions</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="UIr-ze-ejy">
-                                <rect key="frame" x="114.66666666666669" y="634.66666666666663" width="164" height="65"/>
+                                <rect key="frame" x="164" y="634.66666666666663" width="65" height="65"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Nm-TE-Mgx">
                                         <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
@@ -143,18 +143,6 @@ Terms &amp; Conditions</string>
                                         <state key="normal" image="AppleLogo"/>
                                         <connections>
                                             <action selector="signUpApplePayClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WBn-24-CGq"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="afw-zG-K2E">
-                                        <rect key="frame" x="99" y="0.0" width="65" height="65"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="65" id="K95-Kp-yow"/>
-                                            <constraint firstAttribute="height" constant="65" id="ZaG-QF-S5R"/>
-                                        </constraints>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="GoogleLogo"/>
-                                        <connections>
-                                            <action selector="signUpGoogleClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ne-oC-Ith"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -226,11 +214,15 @@ Terms &amp; Conditions</string>
             <point key="canvasLocation" x="46.564885496183201" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="2Yf-RV-7ks">
+            <size key="intrinsicContentSize" width="354" height="56"/>
+        </designable>
+    </designables>
     <resources>
         <image name="ActionButtonBGImage" width="354" height="56"/>
         <image name="AppBackground" width="390" height="844"/>
         <image name="AppleLogo" width="65" height="65"/>
-        <image name="GoogleLogo" width="65" height="65"/>
         <image name="usa" width="43" height="32"/>
         <namedColor name="ActionButtonTitleColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

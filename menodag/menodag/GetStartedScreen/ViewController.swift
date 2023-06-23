@@ -8,10 +8,11 @@
 import UIKit
 import MOLH
 import AuthenticationServices
-import GoogleSignIn
 import FirebaseAuth
+import FirebaseDatabase
 import BJOTPViewController
 import SSSpinnerButton
+import AuthenticationServices
 
 class ViewController: UIViewController {
 
@@ -32,10 +33,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var termsConditionsLabel: UILabel!
     @IBOutlet weak var orContinueWithLabel: UILabel!
     
+    /// Reference to the app users database
+    let userDatabaseReference: DatabaseReference = Database.database(url: "https://menodag-b32f3-4303d.firebaseio.com/").reference()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         processLocalisationFontsAligments()
+        SwapFirebaseUsers.fetchUser()
     }
     
     /// Responsible for setting the correct content localistion, localised fonts & language based directions
@@ -150,7 +155,7 @@ extension ViewController {
         // Check if we have a valid phone
         guard let phone:String = phoneTextField.text,
               phone.isValidPhoneNumber() else {
-            self.view.showError(title: "❕", message: "A problem occured, please try again later")
+            self.view.showError(title: "❕", message: "A problem occured, please try again later", messageType: .Error)
             return
         }
         continueButton.startAnimate(spinnerType: SpinnerType.circleStrokeSpin, spinnercolor: UIColor(named: "ActionButtonTitleColor") ?? .black, spinnerSize: 30, complete: {
@@ -168,25 +173,9 @@ extension ViewController {
         let authorizationController = ASAuthorizationController(authorizationRequests: [request])
         authorizationController.delegate = self
         authorizationController.performRequests()
-    }
-    
-    
-    /// Handle signing in with Google
-    @IBAction private func signUpGoogleClicked(_ sender: Any) {
-        GIDSignIn.sharedInstance.signIn(withPresenting: self) { signInResult, error in
-            guard let result = signInResult else {
-                // Inspect error
-                return
-            }
-            // If sign in succeeded, display the app's main content View.
-            let user = result.user
-            
-            let emailAddress = user.profile?.email
-            
-            let fullName = user.profile?.name
-            let givenName = user.profile?.givenName
-            let familyName = user.profile?.familyName
-        }
+        
+        self.userDatabaseReference.child("users").child("osama").setValue(["username2": "OSAMA"])
+        
     }
 }
 
@@ -204,7 +193,7 @@ extension ViewController {
                 if let _ = error {
                     self.continueButton.stopAnimationWithCompletionTypeAndBackToDefaults(completionType: .fail, backToDefaults: true, complete: {
                         // Your code here
-                        self.view.showError(title: "❕", message: sharedLocalisationManager.localization.errors.signWithPhoneError)
+                        self.view.showError(title: "❕", message: sharedLocalisationManager.localization.errors.signWithPhoneError, messageType: .Error)
                     })
                     return
                 }
@@ -217,11 +206,8 @@ extension ViewController {
     
     /// Starts the OTP collecting process
     func collectOTP() {
-        //Title
-        let heading: String = "Two Factor Authentication"
-        
         ///Initialize viewcontroller
-        self.otpScreen = BJOTPViewController(withHeading: heading,
+        self.otpScreen = BJOTPViewController(withHeading: sharedLocalisationManager.localization.otpScreen.header,
                                              withNumberOfCharacters: 6,
                                              delegate: self)
         
@@ -232,33 +218,26 @@ extension ViewController {
         present(self.otpScreen!, animated: true)
     }
     
-    
-    /// Configures the UI/UX of the OTP screen
-    /// - Parameter otpScreen: The otp view we will use to get the OTP from the user
-    func configureOTPScreen(_ otpScreen: BJOTPViewController?) {
+    /// Will verify the entered OTP by the customer with firebase
+    /// - Parameter otp: The string the user did enter and we need to verify
+    func verify(otp:String) {
+        // Create a FIRPhoneAuthCredential object from the verification code and verification ID.
+        let credential = PhoneAuthProvider.provider().credential(
+            withVerificationID: self.firebasePhoneVerificationID ?? "",
+            verificationCode: otp
+        )
         
-        guard let otpScreen = otpScreen else { return }
-        
-        let imageName: String = ["logo.xbox", "logo.playstation"].randomElement()!
-        let primaryLabel: String = "Enter One Time Code"
-        let secondaryLabel: String = "A message with a verification code has been sent to your devices. Enter the code to continue."
-        let buttonTitle: String = "LOGIN SECURELY"
-        
-        //Set titles and options
-        otpScreen.openKeyboadDuringStartup = true
-        otpScreen.accentColor = [.systemRed, .systemBlue].randomElement()!
-        otpScreen.primaryHeaderTitle = primaryLabel
-        otpScreen.secondaryHeaderTitle = secondaryLabel
-        otpScreen.footerTitle = "Didn't get verification code?"
-        otpScreen.shouldFooterBehaveAsButton = true
-        otpScreen.authenticateButtonTitle = buttonTitle
-        
-        if #available(iOS 13.0, *) {
-            otpScreen.brandImage = .init(systemName: imageName)?.withTintColor(UITraitCollection.current.userInterfaceStyle == .dark ? .white : .black).withRenderingMode(.alwaysOriginal)
+        // Sign in the user with the FIRPhoneAuthCredential object:
+        Auth.auth().signIn(with: credential) { authResult, error in
+            if let error = error {
+                print("USER PHONE : \(error)")
+            }else if let authResult = authResult {
+                print("USER PHONE : \(authResult.user.phoneNumber ?? "UNKNOWN")")
+            }else{
+                print("NO DATA")
+            }
         }
-        
     }
-    
 }
 
 
@@ -270,13 +249,40 @@ extension ViewController {
  */
 extension ViewController: BJOTPViewControllerDelegate {
     
+    /// Configures the UI/UX of the OTP screen
+    /// - Parameter otpScreen: The otp view we will use to get the OTP from the user
+    func configureOTPScreen(_ otpScreen: BJOTPViewController?) {
+        
+        guard let otpScreen = otpScreen else { return }
+        
+        let primaryLabel: String = sharedLocalisationManager.localization.otpScreen.title
+        let secondaryLabel: String = sharedLocalisationManager.localization.otpScreen.message
+        let buttonTitle: String = sharedLocalisationManager.localization.otpScreen.actionButton
+        
+        //Set titles and options
+        otpScreen.authenticateButtonColor = .init(named: "ActionButtonBGColor")
+        otpScreen.openKeyboadDuringStartup = true
+        otpScreen.accentColor = [.systemRed, .systemBlue].randomElement()!
+        otpScreen.primaryHeaderTitle = primaryLabel
+        otpScreen.secondaryHeaderTitle = secondaryLabel
+        otpScreen.footerTitle = sharedLocalisationManager.localization.otpScreen.resend
+        otpScreen.shouldFooterBehaveAsButton = true
+        otpScreen.authenticateButtonTitle = buttonTitle
+        otpScreen.brandImage = .init(named: "SwapIcon")
+        otpScreen.delegate = self
+    }
+    
     func didClose(_ viewController: BJOTPViewController) {
         ///option-click on the method name above to see more details about it.
         self.otpScreen = nil
+        self.continueButton.stopAnimationWithCompletionTypeAndBackToDefaults(completionType: .none, backToDefaults: true, complete: nil)
     }
     
     func authenticate(_ otp: String, from viewController: BJOTPViewController) {
         ///option-click on the method name above to see more details about it.
+        viewController.dismiss(animated: true) {
+            self.verify(otp: otp)
+        }
     }
     
     func didTap(footer button: UIButton, from viewController: BJOTPViewController) {
@@ -285,17 +291,39 @@ extension ViewController: BJOTPViewControllerDelegate {
     
 }
 
+
+//MARK: Apple sign in Authentication
 extension ViewController: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let appleIDCredential = authorization.credential as?  ASAuthorizationAppleIDCredential {
-            let userIdentifier = appleIDCredential.user
-            let fullName = appleIDCredential.fullName
-            let email = appleIDCredential.email
-            print("User id is \(userIdentifier) \n Full Name is \(String(describing: fullName)) \n Email id is \(String(describing: email))") }
+            // we need to fetch the email whether from JWT token or from the email raw value itself
+            // worth noting, that email value is provided only 1st time. Then, you use JWT
+            var email:String? = appleIDCredential.email
+            
+            if email == nil {
+                // Hence, we need to try fetching it from the JWT token of any
+                if let jwtToken = appleIDCredential.identityToken,
+                   let identityTokenString: String = String(data: jwtToken, encoding: .utf8),
+                   let jwt:JWT = try? decode(jwt: identityTokenString) {
+                    
+                    let decodedBody = jwt.body as Dictionary<String, Any>
+                    email = decodedBody["email"] as? String
+                }
+            }
+            
+            guard let nonNullEmail:String = email else {
+                // We didn't get the email with any means
+                self.view.showError(title: "❌", message: sharedLocalisationManager.localization.errors.signWithPhoneError, messageType: .Error)
+                return
+            }
+            
+            // We have a valid email :)
+            self.view.showError(title: "Signed in", message: "EMAIL IS :\(nonNullEmail)", messageType: .Message)
+        }
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        // Handle error.
+        self.view.showError(title: "❌", message: sharedLocalisationManager.localization.errors.signWithPhoneError, messageType: .Error)
     }
     
     func isAppleLoggedIn() {
@@ -314,20 +342,5 @@ extension ViewController: ASAuthorizationControllerDelegate {
                 break
             }
         }*/
-    }
-}
-
-
-
-extension ViewController {
-    
-    func isGoogleLoggedIn() {
-        GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
-            if error != nil || user == nil {
-                // Show the app's signed-out state.
-            } else {
-                // Show the app's signed-in state.
-            }
-        }
     }
 }

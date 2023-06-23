@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import GoogleSignIn
 import FirebaseMessaging
 import FirebaseCore
 import FirebaseAuth
@@ -51,12 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         _ app: UIApplication,
         open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]
     ) -> Bool {
-        var handled: Bool
-        
-        handled = GIDSignIn.sharedInstance.handle(url)
-        if handled {
-            return true
-        }
         
         // Handle other custom URL types.
         
