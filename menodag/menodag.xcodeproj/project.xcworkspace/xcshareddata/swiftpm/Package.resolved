@@ -82,6 +82,33 @@
       }
     },
     {
+      "identity" : "hero",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/HeroTransitions/Hero.git",
+      "state" : {
+        "revision" : "66a554b21116fccf61b3aa2205a86f6b0cdc9766",
+        "version" : "1.6.2"
+      }
+    },
+    {
+      "identity" : "initialsimageview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/bachonk/InitialsImageView.git",
+      "state" : {
+        "revision" : "c668dabb2b9b6ed1264626a1f3676ac597b4de33",
+        "version" : "0.8.0"
+      }
+    },
+    {
+      "identity" : "iqkeyboardmanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hackiftekhar/IQKeyboardManager.git",
+      "state" : {
+        "revision" : "ea08e08958890043019d248065fe3d825f338087",
+        "version" : "6.5.12"
+      }
+    },
+    {
       "identity" : "leveldb",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/leveldb.git",
@@ -127,12 +154,30 @@
       }
     },
     {
+      "identity" : "prynttrimmerview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/HHK1/PryntTrimmerView",
+      "state" : {
+        "revision" : "ac1b60a22c7e6a6514de7a66d2f3d5b537c956d5",
+        "version" : "4.0.2"
+      }
+    },
+    {
       "identity" : "ssspinnerbutton",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SimformSolutionsPvtLtd/SSSpinnerButton.git",
       "state" : {
         "revision" : "41f7661df73b3592111443abc8a5dd7d0a3a082f",
         "version" : "3.2.0"
+      }
+    },
+    {
+      "identity" : "stevia",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/freshOS/Stevia",
+      "state" : {
+        "revision" : "87dd17a86240f16788239a78dd8be11c4b013150",
+        "version" : "4.8.0"
       }
     },
     {
@@ -154,12 +199,30 @@
       }
     },
     {
+      "identity" : "toast-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/BastiaanJansen/toast-swift",
+      "state" : {
+        "revision" : "7e9e3fa6c85dc76ab996abb09b26f5fc14bec26b",
+        "version" : "1.3.2"
+      }
+    },
+    {
       "identity" : "uigradient",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/dqhieu/UIGradient.git",
       "state" : {
         "revision" : "2f559b064ddbca24f5994e8f923bb1ddf6a6be7d",
         "version" : "1.3.2"
+      }
+    },
+    {
+      "identity" : "ypimagepicker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Yummypets/YPImagePicker.git",
+      "state" : {
+        "revision" : "4dbae7a1f69db3d65c47f4106d0ca09f678edeaf",
+        "version" : "5.2.1"
       }
     }
   ],

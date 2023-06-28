@@ -17,7 +17,8 @@
         },
         "personalInfoScreen": {
             "header": "Add your personal info",
-            "subHeader": "Please add your basic information."
+            "subHeader": "Please add your basic information.",
+            "footer":"All fields are required"
         },
         "buttonTitles": {
             "continue": "Continue",
@@ -26,7 +27,7 @@
         },
         "textFieldPlaceHolders": {
             "email": "Email address",
-            "phone": "Phone number +965XXXXXXXX",
+            "phone": "Phone number 5XXXXXXXX",
             "firstName": "First name",
             "lastName": "Last name",
             "password": "Password",
@@ -39,7 +40,11 @@
             "arabic":"العربية"
         },
         "errors":{
-            "signWithPhoneError":"A problem occured, please try again later"
+            "signWithPhoneError":"A problem occured, please try again later",
+            "firstNameError":"Required, minimum of 3 charachters",
+            "userNameError":"Required, minimum of 3 charachters",
+            "phoneError":"Required, must be 8 digits",
+            "emailError":"Required, must be a valid email"
         }
     },
     "ar": {
@@ -60,7 +65,8 @@
         },
         "personalInfoScreen": {
             "header": "معلوماتك المهنية",
-            "subHeader": "برجاء إضافة المعلومات المهنية الرئيسية"
+            "subHeader": "برجاء إضافة المعلومات المهنية الرئيسية",
+            "footer":"جميع البيانات مطلوبة"
         },
         "buttonTitles": {
             "continue": "إستمرار",
@@ -69,7 +75,7 @@
         },
         "textFieldPlaceHolders": {
             "email": "البريد الإلكتروني",
-            "phone": "رقم الهاتف  +965XXXXXXXX",
+            "phone": "رقم الهاتف 5XXXXXXXX",
             "firstName": "الإسم الأول",
             "lastName": "الإسم الأخير",
             "password": "كلمة السر",
@@ -82,7 +88,11 @@
             "arabic":"العربية"
         },
         "errors":{
-            "signWithPhoneError":"A problem occured, please try again later"
+            "signWithPhoneError":"مشكله حصلت، برجاء المحالة مرة أخرى",
+            "firstNameError":"مطلوب ، 3 أحرف على الأقل",
+            "userNameError":"مطلوب ، 3 أحرف على الأقل",
+            "phoneError":"إجباري ، يجب أن يكون 8 أرقام",
+            "emailError":"مطلوب ، يجب أن يكون بريدًا إلكترونيًا صالحًا"
         }
     }
 }

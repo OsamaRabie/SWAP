@@ -165,7 +165,7 @@ extension ButtonTitles {
 
 // MARK: - Errors
 struct Errors: Codable {
-    let signWithPhoneError: String
+    let signWithPhoneError,firstNameError,userNameError,phoneError,emailError: String
 }
 
 // MARK: Errors convenience initializers and mutators
@@ -187,10 +187,18 @@ extension Errors {
     }
     
     func with(
-        signWithPhoneError: String? = nil
+        signWithPhoneError: String? = nil,
+        firstNameError: String?     = nil,
+        userNameError: String?      = nil,
+        phoneError: String?         = nil,
+        emailError: String?         = nil
     ) -> Errors {
         return Errors(
-            signWithPhoneError: signWithPhoneError ?? self.signWithPhoneError
+            signWithPhoneError: signWithPhoneError ?? self.signWithPhoneError,
+            firstNameError: firstNameError ?? self.firstNameError,
+            userNameError:  userNameError ?? self.userNameError,
+            phoneError:     phoneError ?? self.phoneError,
+            emailError:     emailError ?? self.emailError
         )
     }
     
@@ -351,7 +359,7 @@ extension OtpScreen {
 
 // MARK: - PersonalInfoScreen
 struct PersonalInfoScreen: Codable {
-    let header, subHeader: String
+    let header, subHeader, footer: String
 }
 
 // MARK: PersonalInfoScreen convenience initializers and mutators
@@ -374,11 +382,13 @@ extension PersonalInfoScreen {
     
     func with(
         header: String? = nil,
-        subHeader: String? = nil
+        subHeader: String? = nil,
+        footer: String? = nil
     ) -> PersonalInfoScreen {
         return PersonalInfoScreen(
             header: header ?? self.header,
-            subHeader: subHeader ?? self.subHeader
+            subHeader: subHeader ?? self.subHeader,
+            footer: footer ?? self.footer
         )
     }
     

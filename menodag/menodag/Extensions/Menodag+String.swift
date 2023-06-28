@@ -35,9 +35,6 @@ extension String {
     
     /// Checks if the current string is a valid international phone number or not
     func isValidPhoneNumber() -> Bool {
-        let regEx = "^\\+(?:[0-9]?){6,14}[0-9]$"
-        
-        let phoneCheck = NSPredicate(format: "SELF MATCHES[c] %@", regEx)
-        return phoneCheck.evaluate(with: self)
+        return self.allSatisfy{ $0.isNumber } && self.count == 8
     }
 }

@@ -26,6 +26,16 @@
 		E86E17C62A1949440053A1E9 /* UIGradient in Frameworks */ = {isa = PBXBuildFile; productRef = E86E17C52A1949440053A1E9 /* UIGradient */; };
 		E86E17C82A194A780053A1E9 /* Menodag+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E17C72A194A780053A1E9 /* Menodag+UIColor.swift */; };
 		E891713F2A45BB8A000223C2 /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891713E2A45BB8A000223C2 /* PersonalInfoViewController.swift */; };
+		E89171422A45C2BD000223C2 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = E89171412A45C2BD000223C2 /* Hero */; };
+		E89171442A45C5EE000223C2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89171432A45C5EE000223C2 /* Constants.swift */; };
+		E89171472A461A56000223C2 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = E89171462A461A56000223C2 /* YPImagePicker */; };
+		E891714A2A461B96000223C2 /* InitialsImageView in Frameworks */ = {isa = PBXBuildFile; productRef = E89171492A461B96000223C2 /* InitialsImageView */; };
+		E891714D2A46A269000223C2 /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891714C2A46A269000223C2 /* UserCard.swift */; };
+		E89171782A4ABCA9000223C2 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E89171772A4ABCA9000223C2 /* IQKeyboardManagerSwift */; };
+		E891717D2A4AD919000223C2 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = E891717C2A4AD919000223C2 /* Toast */; };
+		E891717F2A4AE740000223C2 /* BusinessInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891717E2A4AE740000223C2 /* BusinessInfoViewController.swift */; };
+		E89171812A4AFCC1000223C2 /* SocialMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89171802A4AFCC1000223C2 /* SocialMedia.swift */; };
+		E89171832A4AFCD0000223C2 /* SocialMedia.xib in Resources */ = {isa = PBXBuildFile; fileRef = E89171822A4AFCD0000223C2 /* SocialMedia.xib */; };
 		E8BF3AA72A0FEBD900F0D97A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF3AA62A0FEBD900F0D97A /* AppDelegate.swift */; };
 		E8BF3AA92A0FEBD900F0D97A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF3AA82A0FEBD900F0D97A /* SceneDelegate.swift */; };
 		E8BF3AAB2A0FEBD900F0D97A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF3AAA2A0FEBD900F0D97A /* ViewController.swift */; };
@@ -64,6 +74,11 @@
 		E86E17C22A19410B0053A1E9 /* Menodag+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Menodag+View.swift"; sourceTree = "<group>"; };
 		E86E17C72A194A780053A1E9 /* Menodag+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Menodag+UIColor.swift"; sourceTree = "<group>"; };
 		E891713E2A45BB8A000223C2 /* PersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewController.swift; sourceTree = "<group>"; };
+		E89171432A45C5EE000223C2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E891714C2A46A269000223C2 /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
+		E891717E2A4AE740000223C2 /* BusinessInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessInfoViewController.swift; sourceTree = "<group>"; };
+		E89171802A4AFCC1000223C2 /* SocialMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMedia.swift; sourceTree = "<group>"; };
+		E89171822A4AFCD0000223C2 /* SocialMedia.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SocialMedia.xib; sourceTree = "<group>"; };
 		E8BF3AA32A0FEBD900F0D97A /* menodag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = menodag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BF3AA62A0FEBD900F0D97A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8BF3AA82A0FEBD900F0D97A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,15 +112,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E86E17B82A18F6210053A1E9 /* FirebaseMessaging in Frameworks */,
+				E89171422A45C2BD000223C2 /* Hero in Frameworks */,
+				E891714A2A461B96000223C2 /* InitialsImageView in Frameworks */,
 				E83FC91A2A21BBE100E6AA96 /* SSSpinnerButtonr in Frameworks */,
 				E86E17B42A18F6210053A1E9 /* FirebaseDatabaseSwift in Frameworks */,
 				E86E17BC2A18F6210053A1E9 /* FirebaseStorageCombine-Community in Frameworks */,
 				E8BF3AE72A12273800F0D97A /* MOLH in Frameworks */,
 				E86E17BA2A18F6210053A1E9 /* FirebaseRemoteConfigSwift in Frameworks */,
 				E86E17C62A1949440053A1E9 /* UIGradient in Frameworks */,
+				E89171782A4ABCA9000223C2 /* IQKeyboardManagerSwift in Frameworks */,
 				E86E17B62A18F6210053A1E9 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				E86E17B22A18F6200053A1E9 /* FirebaseAuth in Frameworks */,
+				E891717D2A4AD919000223C2 /* Toast in Frameworks */,
 				E86E17AC2A18E07B0053A1E9 /* SwiftMessages in Frameworks */,
+				E89171472A461A56000223C2 /* YPImagePicker in Frameworks */,
 				E83FC9172A21169600E6AA96 /* BJOTPViewController in Frameworks */,
 				E8BF3AD92A10B0C400F0D97A /* Localize_Swift in Frameworks */,
 			);
@@ -132,6 +152,7 @@
 				E86E17C22A19410B0053A1E9 /* Menodag+View.swift */,
 				E86E17C72A194A780053A1E9 /* Menodag+UIColor.swift */,
 				E83A6A9F2A34296A0074D2F8 /* Swap + FirebaseUsers.swift */,
+				E89171432A45C5EE000223C2 /* Constants.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -140,8 +161,19 @@
 			isa = PBXGroup;
 			children = (
 				E891713E2A45BB8A000223C2 /* PersonalInfoViewController.swift */,
+				E891717E2A4AE740000223C2 /* BusinessInfoViewController.swift */,
+				E89171802A4AFCC1000223C2 /* SocialMedia.swift */,
+				E89171822A4AFCD0000223C2 /* SocialMedia.xib */,
 			);
 			path = PersonalInfo;
+			sourceTree = "<group>";
+		};
+		E891714B2A46A260000223C2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E891714C2A46A269000223C2 /* UserCard.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		E8BF3A9A2A0FEBD900F0D97A = {
@@ -163,6 +195,7 @@
 		E8BF3AA52A0FEBD900F0D97A /* menodag */ = {
 			isa = PBXGroup;
 			children = (
+				E891714B2A46A260000223C2 /* Models */,
 				E891713D2A45BB78000223C2 /* PersonalInfo */,
 				E86E17BF2A1940950053A1E9 /* Extensions */,
 				E86E17BD2A18F7DA0053A1E9 /* GoogleService-Info.plist */,
@@ -248,6 +281,11 @@
 				E86E17C52A1949440053A1E9 /* UIGradient */,
 				E83FC9162A21169600E6AA96 /* BJOTPViewController */,
 				E83FC9192A21BBE100E6AA96 /* SSSpinnerButtonr */,
+				E89171412A45C2BD000223C2 /* Hero */,
+				E89171462A461A56000223C2 /* YPImagePicker */,
+				E89171492A461B96000223C2 /* InitialsImageView */,
+				E89171772A4ABCA9000223C2 /* IQKeyboardManagerSwift */,
+				E891717C2A4AD919000223C2 /* Toast */,
 			);
 			productName = menodag;
 			productReference = E8BF3AA32A0FEBD900F0D97A /* menodag.app */;
@@ -285,6 +323,11 @@
 				E86E17C42A1949440053A1E9 /* XCRemoteSwiftPackageReference "UIGradient" */,
 				E83FC9152A21169600E6AA96 /* XCRemoteSwiftPackageReference "BJOTPViewController" */,
 				E83FC9182A21BBE100E6AA96 /* XCRemoteSwiftPackageReference "SSSpinnerButton" */,
+				E89171402A45C2BC000223C2 /* XCRemoteSwiftPackageReference "Hero" */,
+				E89171452A461A56000223C2 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
+				E89171482A461B95000223C2 /* XCRemoteSwiftPackageReference "InitialsImageView" */,
+				E89171762A4ABCA9000223C2 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				E891717B2A4AD919000223C2 /* XCRemoteSwiftPackageReference "toast-swift" */,
 			);
 			productRefGroup = E8BF3AA42A0FEBD900F0D97A /* Products */;
 			projectDirPath = "";
@@ -307,6 +350,7 @@
 				E8BF3AD22A0FF4E700F0D97A /* Tajawal-Regular.ttf in Resources */,
 				E86E17BE2A18F7DA0053A1E9 /* GoogleService-Info.plist in Resources */,
 				E8BF3AD32A0FF4E700F0D97A /* Tajawal-Medium.ttf in Resources */,
+				E89171832A4AFCD0000223C2 /* SocialMedia.xib in Resources */,
 				E8BF3AD12A0FF4E700F0D97A /* Tajawal-Black.ttf in Resources */,
 				E8BF3AC42A0FF4DA00F0D97A /* Poppins-ExtraLight.ttf in Resources */,
 				E8BF3AB32A0FEBDB00F0D97A /* LaunchScreen.storyboard in Resources */,
@@ -333,13 +377,17 @@
 				E83A6A9E2A33456B0074D2F8 /* JWT.swift in Sources */,
 				E8BF3AAB2A0FEBD900F0D97A /* ViewController.swift in Sources */,
 				E86E17C32A19410B0053A1E9 /* Menodag+View.swift in Sources */,
+				E891717F2A4AE740000223C2 /* BusinessInfoViewController.swift in Sources */,
 				E86E17C82A194A780053A1E9 /* Menodag+UIColor.swift in Sources */,
 				E8BF3ADB2A10B0CF00F0D97A /* MenodagFont.swift in Sources */,
 				E83A6AA02A34296A0074D2F8 /* Swap + FirebaseUsers.swift in Sources */,
 				E8BF3AA72A0FEBD900F0D97A /* AppDelegate.swift in Sources */,
+				E891714D2A46A269000223C2 /* UserCard.swift in Sources */,
 				E891713F2A45BB8A000223C2 /* PersonalInfoViewController.swift in Sources */,
 				E83A6A9D2A33456B0074D2F8 /* JWTDecodeError.swift in Sources */,
+				E89171812A4AFCC1000223C2 /* SocialMedia.swift in Sources */,
 				E8BF3AA92A0FEBD900F0D97A /* SceneDelegate.swift in Sources */,
+				E89171442A45C5EE000223C2 /* Constants.swift in Sources */,
 				E83A6A9C2A33456B0074D2F8 /* JWTDecode.swift in Sources */,
 				E8BF3AE42A12152800F0D97A /* LocalisationModel.swift in Sources */,
 			);
@@ -609,6 +657,46 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		E89171402A45C2BC000223C2 /* XCRemoteSwiftPackageReference "Hero" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/HeroTransitions/Hero.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.6.0;
+			};
+		};
+		E89171452A461A56000223C2 /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Yummypets/YPImagePicker.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.2.0;
+			};
+		};
+		E89171482A461B95000223C2 /* XCRemoteSwiftPackageReference "InitialsImageView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/bachonk/InitialsImageView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.0;
+			};
+		};
+		E89171762A4ABCA9000223C2 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 6.5.0;
+			};
+		};
+		E891717B2A4AD919000223C2 /* XCRemoteSwiftPackageReference "toast-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/BastiaanJansen/toast-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		E8BF3AD72A10B0C400F0D97A /* XCRemoteSwiftPackageReference "Localize-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/marmelroy/Localize-Swift.git";
@@ -677,6 +765,31 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E86E17C42A1949440053A1E9 /* XCRemoteSwiftPackageReference "UIGradient" */;
 			productName = UIGradient;
+		};
+		E89171412A45C2BD000223C2 /* Hero */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E89171402A45C2BC000223C2 /* XCRemoteSwiftPackageReference "Hero" */;
+			productName = Hero;
+		};
+		E89171462A461A56000223C2 /* YPImagePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E89171452A461A56000223C2 /* XCRemoteSwiftPackageReference "YPImagePicker" */;
+			productName = YPImagePicker;
+		};
+		E89171492A461B96000223C2 /* InitialsImageView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E89171482A461B95000223C2 /* XCRemoteSwiftPackageReference "InitialsImageView" */;
+			productName = InitialsImageView;
+		};
+		E89171772A4ABCA9000223C2 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E89171762A4ABCA9000223C2 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		E891717C2A4AD919000223C2 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E891717B2A4AD919000223C2 /* XCRemoteSwiftPackageReference "toast-swift" */;
+			productName = Toast;
 		};
 		E8BF3AD82A10B0C400F0D97A /* Localize_Swift */ = {
 			isa = XCSwiftPackageProductDependency;

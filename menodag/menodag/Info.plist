@@ -21,6 +21,10 @@
 	</array>
 	<key>GIDClientID</key>
 	<string>962465558437-2ljjmi52lkuvhc7i18vqkmn8i1ea3o7c.apps.googleusercontent.com</string>
+    <key>NSCameraUsageDescription</key>
+    <string>We will use the camera to take a selfie of you :)</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>We will use the library to pick a picture of you :)</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Poppins-Light.ttf</string>

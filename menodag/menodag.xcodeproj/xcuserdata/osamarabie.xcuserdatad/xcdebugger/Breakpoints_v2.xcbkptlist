@@ -7,49 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "ED4F0926-6E7A-4DB1-8D19-F1D9B32F86F1"
-            shouldBeEnabled = "No"
+            uuid = "7CDA265F-BC11-45B0-95B3-6EF53E834ABE"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "menodag/GetStartedScreen/ViewController.swift"
+            filePath = "menodag/PersonalInfo/PersonalInfoViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "298"
-            endingLineNumber = "298"
-            landmarkName = "authorizationController(controller:didCompleteWithAuthorization:)"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "updateContinueButton()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "ED4F0926-6E7A-4DB1-8D19-F1D9B32F86F1 - cc23a2de6562dae5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "menodag.ViewController.authorizationController(controller: __C.ASAuthorizationController, didCompleteWithAuthorization: __C.ASAuthorization) -&gt; ()"
-                  moduleName = "menodag"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/osamarabie/desktop/Arabdevs/SWAP/menodag/menodag/GetStartedScreen/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "311"
-                  endingLineNumber = "311"
-                  offsetFromSymbolStart = "269">
-               </Location>
-               <Location
-                  uuid = "ED4F0926-6E7A-4DB1-8D19-F1D9B32F86F1 - cc23a2de6562dae5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "menodag.ViewController.authorizationController(controller: __C.ASAuthorizationController, didCompleteWithAuthorization: __C.ASAuthorization) -&gt; ()"
-                  moduleName = "menodag"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/osamarabie/desktop/Arabdevs/SWAP/menodag/menodag/GetStartedScreen/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "311"
-                  endingLineNumber = "311"
-                  offsetFromSymbolStart = "416">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

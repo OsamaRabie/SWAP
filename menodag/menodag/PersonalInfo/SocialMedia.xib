@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SocialMedia" customModule="menodag" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="JcC-8v-aSF"/>
+                <outlet property="iconImageView" destination="Uji-6v-A6c" id="ZJM-5p-MLE"/>
+                <outlet property="socialMediaHandlerTextField" destination="iUi-oc-Fom" id="anJ-UM-WGA"/>
+                <outlet property="socialMediaNameLabel" destination="zDm-Mp-GbY" id="9N3-WA-MZL"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="76"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Facebook" translatesAutoresizingMaskIntoConstraints="NO" id="Uji-6v-A6c">
+                    <rect key="frame" x="19" y="26" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Uji-6v-A6c" secondAttribute="height" multiplier="1:1" id="QvP-0M-Ihr"/>
+                        <constraint firstAttribute="width" constant="24" id="uvU-TI-I7R"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="@Handler" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iUi-oc-Fom">
+                    <rect key="frame" x="254" y="15.666666666666664" width="120" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="i4n-zT-ZDY"/>
+                        <constraint firstAttribute="width" constant="120" id="pWp-Yx-QSV"/>
+                    </constraints>
+                    <color key="textColor" name="AppBlackColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="given-name"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="24"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDm-Mp-GbY">
+                    <rect key="frame" x="55" y="15.666666666666664" width="79" height="45"/>
+                    <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins Medium" pointSize="16"/>
+                    <color key="textColor" name="AppBlackColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" name="SocialBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="zDm-Mp-GbY" firstAttribute="centerY" secondItem="Uji-6v-A6c" secondAttribute="centerY" id="JXR-gj-MlF"/>
+                <constraint firstItem="Uji-6v-A6c" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Ly8-vq-dPk"/>
+                <constraint firstAttribute="trailing" secondItem="iUi-oc-Fom" secondAttribute="trailing" constant="19" id="NeH-1e-CDt"/>
+                <constraint firstItem="zDm-Mp-GbY" firstAttribute="leading" secondItem="Uji-6v-A6c" secondAttribute="trailing" constant="12" id="ZmZ-m6-dD8"/>
+                <constraint firstItem="iUi-oc-Fom" firstAttribute="height" secondItem="zDm-Mp-GbY" secondAttribute="height" id="aqu-qr-Nbr"/>
+                <constraint firstItem="Uji-6v-A6c" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="19" id="l5t-ur-VtX"/>
+                <constraint firstItem="Uji-6v-A6c" firstAttribute="width" secondItem="Uji-6v-A6c" secondAttribute="height" multiplier="1:1" id="m04-nR-y8r"/>
+                <constraint firstItem="iUi-oc-Fom" firstAttribute="centerY" secondItem="zDm-Mp-GbY" secondAttribute="centerY" id="xUF-tH-T2w"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="138" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Facebook" width="28" height="28"/>
+        <namedColor name="AppBlackColor">
+            <color red="0.016000000759959221" green="0.027000000700354576" blue="0.067000001668930054" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="SocialBackgroundColor">
+            <color red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

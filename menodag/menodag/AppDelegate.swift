@@ -9,6 +9,8 @@ import UIKit
 import FirebaseMessaging
 import FirebaseCore
 import FirebaseAuth
+import Hero
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -19,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Override point for customization after application launch.
         FirebaseApp.configure()
         UNUserNotificationCenter.current().delegate = self
+        IQKeyboardManager.shared.enable = true
         
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
         UNUserNotificationCenter.current().requestAuthorization(

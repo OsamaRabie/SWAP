@@ -13,6 +13,8 @@ import FirebaseDatabase
 import BJOTPViewController
 import SSSpinnerButton
 import AuthenticationServices
+import Hero
+import Toast
 
 class ViewController: UIViewController {
 
@@ -40,7 +42,24 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         processLocalisationFontsAligments()
-        SwapFirebaseUsers.fetchUser()
+        setHeroIDs()
+        self.navigationController?.hero.isEnabled = true
+        self.hero.isEnabled = true
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // defensive coding, let us reset the current card data
+        SwapFirebaseUsers.currentUserCard = nil
+    }
+    
+    /// Will set the ids for the diferent uiviews to prepare them for the hero animation while navigation to other screens
+    func setHeroIDs() {
+        continueButton.hero.id = HeroIDsConstants.actionButton.rawValue
+        phoneTextField.hero.id = HeroIDsConstants.phoneTextField.rawValue
+        headerTitleLabel.hero.id = HeroIDsConstants.headerLabel.rawValue
+        subHeaderTitleLabel.hero.id = HeroIDsConstants.subHeaderLabel.rawValue
     }
     
     /// Responsible for setting the correct content localistion, localised fonts & language based directions
@@ -49,6 +68,8 @@ class ViewController: UIViewController {
         setTheme()
         setContent()
         setDirections()
+        setDelegates()
+        updateContinueButton()
     }
 }
 
@@ -66,7 +87,7 @@ extension ViewController {
         
         // TextFields
         phoneTextField.font = MenodagFont.localizedFont(for: .PoppinsRegular, with: 14)
-        phoneTextField.attributedPlaceholder = NSAttributedString(string:sharedLocalisationManager.localization.textFieldPlaceHolders.phone, attributes:[.foregroundColor: UIColor(named: "TextFieldsFontColor") ?? .black ,.font : MenodagFont.localizedFont(for: .PoppinsRegular, with: 14)])
+        phoneTextField.attributedPlaceholder = NSAttributedString(string:sharedLocalisationManager.localization.textFieldPlaceHolders.phone, attributes:[.foregroundColor: UIColor(named: "TextFieldPlacedHolderColor") ?? .black ,.font : MenodagFont.localizedFont(for: .PoppinsRegular, with: 14)])
         phoneTextField.textColor = UIColor(named: "TextFieldsFontColor") ?? .black
         // Buttons
         forgotPasswordButton.titleLabel?.font = MenodagFont.localizedFont(for: .PoppinsMedium, with: 14)
@@ -118,6 +139,37 @@ extension ViewController {
         // Correct view alignment
         view.semanticContentAttribute = viewAlignment
     }
+    
+    /// Sets self as a delegate to the correct views
+    func setDelegates() {
+        phoneTextField.delegate = self
+    }
+    
+    /// Will enable/disable the continue button based on the validity of the data inside the card :)
+    func updateContinueButton(with phone:String = "") {
+        // Let us see how valid the current card user is
+        let (isValid, errorMessage) = Card.validate(field: .phone, value: phone)
+        // Define animation attributes
+        var finalAlpha = 1.0
+        var zoomScale = 1.0
+        var isEnabled = true
+        // We will disable and fade out and shrink the button if the current card user cannot proceed as he didn't enter valid data
+        if !isValid {
+            finalAlpha = 0.7
+            zoomScale = 0.8
+            isEnabled = false
+        }
+        
+        // let us apply the animation now
+        // We will only apply the animation if the button is not already in the final stage we want to achieve
+        guard continueButton.isEnabled != isEnabled else { return }
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 1, options: [.curveEaseOut], animations: {
+            self.continueButton.transform = CGAffineTransform.identity.scaledBy(x: zoomScale, y: zoomScale)
+            self.continueButton.alpha = finalAlpha
+        })
+        continueButton.isEnabled = isEnabled
+    }
 }
 
 
@@ -155,7 +207,7 @@ extension ViewController {
         // Check if we have a valid phone
         guard let phone:String = phoneTextField.text,
               phone.isValidPhoneNumber() else {
-            self.view.showError(title: "❕", message: "A problem occured, please try again later", messageType: .Error)
+            self.view.showError(title: "A problem occured, please try again later")
             return
         }
         continueButton.startAnimate(spinnerType: SpinnerType.circleStrokeSpin, spinnercolor: UIColor(named: "ActionButtonTitleColor") ?? .black, spinnerSize: 30, complete: {
@@ -167,15 +219,14 @@ extension ViewController {
     
     /// Handle signing in with Apple
     @IBAction private func signUpApplePayClicked(_ sender: Any) {
-        let appleIDProvider = ASAuthorizationAppleIDProvider()
-        let request = appleIDProvider.createRequest()
-        request.requestedScopes = [.fullName, .email]
-        let authorizationController = ASAuthorizationController(authorizationRequests: [request])
-        authorizationController.delegate = self
-        authorizationController.performRequests()
-        
-        self.userDatabaseReference.child("users").child("osama").setValue(["username2": "OSAMA"])
-        
+        continueButton.startAnimate(spinnerType: .circleStrokeSpin, spinnercolor: .init(named: "ActionButtonTitleColor") ?? .black, complete: {
+            let appleIDProvider = ASAuthorizationAppleIDProvider()
+            let request = appleIDProvider.createRequest()
+            request.requestedScopes = [.fullName, .email]
+            let authorizationController = ASAuthorizationController(authorizationRequests: [request])
+            authorizationController.delegate = self
+            authorizationController.performRequests()
+        })
     }
 }
 
@@ -193,7 +244,7 @@ extension ViewController {
                 if let _ = error {
                     self.continueButton.stopAnimationWithCompletionTypeAndBackToDefaults(completionType: .fail, backToDefaults: true, complete: {
                         // Your code here
-                        self.view.showError(title: "❕", message: sharedLocalisationManager.localization.errors.signWithPhoneError, messageType: .Error)
+                        self.view.showError(title: sharedLocalisationManager.localization.errors.signWithPhoneError)
                     })
                     return
                 }
@@ -313,18 +364,43 @@ extension ViewController: ASAuthorizationControllerDelegate {
             
             guard let nonNullEmail:String = email else {
                 // We didn't get the email with any means
-                self.view.showError(title: "❌", message: sharedLocalisationManager.localization.errors.signWithPhoneError, messageType: .Error)
+                self.continueButton.stopAnimatingWithCompletionType(completionType: .fail) {
+                    self.view.showError(title: sharedLocalisationManager.localization.errors.signWithPhoneError)
+                }
                 return
             }
             
-            // We have a valid email :)
-            let personalInfoController:PersonalInfoViewController = storyboard?.instantiateViewController(withIdentifier: "PersonalInfoViewController") as! PersonalInfoViewController
-            navigationController?.pushViewController(personalInfoController, animated: true)
+            logInWith(email: nonNullEmail)
         }
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        self.view.showError(title: "❌", message: sharedLocalisationManager.localization.errors.signWithPhoneError, messageType: .Error)
+        self.view.showError(title: sharedLocalisationManager.localization.errors.signWithPhoneError)
+    }
+    
+    /// Will do the logic needed to make sure if there is a user registered with this email, will be moved to the profile page
+    /// Otherwise, it will take him to sign up page
+    /// - Parameter email: The verified email you want to log the user with
+    func logInWith(email:String) {
+        // let us check if we have a registered user or not first
+        SwapFirebaseUsers.fetchUser(email: email) { userCard in
+            // This means the user is registered and has basic info added
+        } onNotFound: {
+            // This means the user is not registered, so we need him to fill in his data
+            self.continueButton.stopAnimatingWithCompletionType(completionType: .none) {
+                // let us create the user card and fill in the email
+                SwapFirebaseUsers.currentUserCard = .init(contactData: .init(phone: nil, email: email), personalData: .init(), professionalData: .init())
+                // let us move to the sign up process controller
+                let personalInfoViewController:PersonalInfoViewController = self.storyboard?.instantiateViewController(withIdentifier: "PersonalInfoViewController") as! PersonalInfoViewController
+                self.navigationController?.pushViewController(personalInfoViewController, animated: true)
+            }
+        } onError: { error in
+            // This means, an error occured and we need to tell the user about it
+            self.continueButton.stopAnimatingWithCompletionType(completionType: .error) {
+                self.view.showError(title: error)
+            }
+        }
+
     }
     
     func isAppleLoggedIn() {
@@ -343,5 +419,27 @@ extension ViewController: ASAuthorizationControllerDelegate {
                 break
             }
         }*/
+    }
+}
+
+
+
+
+//MARK: TextField delegate
+extension ViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        // let us get the new text entered by the user
+        let textFieldText: NSString = (textField.text ?? "") as NSString
+        let textAfterUpdate = textFieldText.replacingCharacters(in: range, with: string)
+        // Let us revalidate the phone entered and check if he can go through the next step
+        updateContinueButton(with: textAfterUpdate)
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let (isValid,errorMessage) = Card.validate(field: .phone, value: phoneTextField.text)
+        if !isValid {
+            self.view.showError(title: errorMessage)
+        }
     }
 }
