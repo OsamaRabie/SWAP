@@ -37,4 +37,27 @@ extension String {
     func isValidPhoneNumber() -> Bool {
         return self.allSatisfy{ $0.isNumber } && self.count == 8
     }
+    
+    /// removes anything not an alpha numeric
+    var stripped: String {
+        let okayChars = Set("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ1234567890")
+        return self.filter {okayChars.contains($0) }
+    }
+    
+    /// Decides if a given string is a whole number
+    var isWholeNumber: Bool {
+        return self.allSatisfy { character in
+            character.isWholeNumber
+            
+        }
+    }
+}
+
+
+extension Date {
+    func getFormattedDate(format: String) -> String {
+        let dateformat = DateFormatter()
+        dateformat.dateFormat = format
+        return dateformat.string(from: self)
+    }
 }

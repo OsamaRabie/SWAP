@@ -65,6 +65,10 @@ struct Ar: Codable {
     let textFieldPlaceHolders: TextFieldPlaceHolders
     let languagePicker: LanguagePicker
     let errors: Errors
+    let emptyTable: EmptyTable
+    let smsMailPicker: SmsMailPicker
+    let connectAlert: ConnectAlert
+    let createProfileForCardAlert: CreateProfileForCardAlert
 }
 
 // MARK: Ar convenience initializers and mutators
@@ -92,7 +96,11 @@ extension Ar {
         buttonTitles: ButtonTitles? = nil,
         textFieldPlaceHolders: TextFieldPlaceHolders? = nil,
         languagePicker: LanguagePicker? = nil,
-        errors: Errors? = nil
+        errors: Errors? = nil,
+        emptyTable: EmptyTable? = nil,
+        smsMailPicker: SmsMailPicker? = nil,
+        connectAlert: ConnectAlert? = nil,
+        createProfileForCardAlert: CreateProfileForCardAlert? = nil
     ) -> Ar {
         return Ar(
             getStarted: getStarted ?? self.getStarted,
@@ -101,7 +109,11 @@ extension Ar {
             buttonTitles: buttonTitles ?? self.buttonTitles,
             textFieldPlaceHolders: textFieldPlaceHolders ?? self.textFieldPlaceHolders,
             languagePicker: languagePicker ?? self.languagePicker,
-            errors: errors ?? self.errors
+            errors: errors ?? self.errors,
+            emptyTable: emptyTable ?? self.emptyTable,
+            smsMailPicker: smsMailPicker ?? self.smsMailPicker,
+            connectAlert: connectAlert ?? self.connectAlert,
+            createProfileForCardAlert: createProfileForCardAlert ?? self.createProfileForCardAlert
         )
     }
     
@@ -116,11 +128,11 @@ extension Ar {
 
 // MARK: - ButtonTitles
 struct ButtonTitles: Codable {
-    let buttonTitlesContinue, cancel, complete: String
+    let buttonTitlesContinue, cancel, complete, ok, skip, delete: String
     
     enum CodingKeys: String, CodingKey {
         case buttonTitlesContinue = "continue"
-        case cancel, complete
+        case cancel, complete, ok, skip, delete
     }
 }
 
@@ -145,12 +157,18 @@ extension ButtonTitles {
     func with(
         buttonTitlesContinue: String? = nil,
         cancel: String? = nil,
-        complete: String? = nil
+        complete: String? = nil,
+        ok: String? = nil,
+        skip: String? = nil,
+        delete: String? = nil
     ) -> ButtonTitles {
         return ButtonTitles(
             buttonTitlesContinue: buttonTitlesContinue ?? self.buttonTitlesContinue,
             cancel: cancel ?? self.cancel,
-            complete: complete ?? self.complete
+            complete: complete ?? self.complete,
+            ok: ok ?? self.ok,
+            skip: skip ?? self.skip,
+            delete: delete ?? self.delete
         )
     }
     
@@ -165,7 +183,7 @@ extension ButtonTitles {
 
 // MARK: - Errors
 struct Errors: Codable {
-    let signWithPhoneError,firstNameError,userNameError,phoneError,emailError: String
+    let signWithPhoneError,firstNameError,userNameError,phoneError,emailError,jobError,companyError: String
 }
 
 // MARK: Errors convenience initializers and mutators
@@ -191,14 +209,68 @@ extension Errors {
         firstNameError: String?     = nil,
         userNameError: String?      = nil,
         phoneError: String?         = nil,
-        emailError: String?         = nil
+        emailError: String?         = nil,
+        jobError: String?         = nil,
+        companyError: String?         = nil
     ) -> Errors {
         return Errors(
             signWithPhoneError: signWithPhoneError ?? self.signWithPhoneError,
             firstNameError: firstNameError ?? self.firstNameError,
             userNameError:  userNameError ?? self.userNameError,
             phoneError:     phoneError ?? self.phoneError,
-            emailError:     emailError ?? self.emailError
+            emailError:     emailError ?? self.emailError,
+            jobError:     jobError ?? self.jobError,
+            companyError:     companyError ?? self.companyError
+        )
+    }
+    
+    func jsonData() throws -> Data {
+        return try newJSONEncoder().encode(self)
+    }
+    
+    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
+        return String(data: try self.jsonData(), encoding: encoding)
+    }
+}
+
+// MARK: - EmptyTable
+struct EmptyTable: Codable {
+    let searchHistoryLabel,searchHistoryMessage,exchangeHistoryLabel,exchangeHistoryMessage,productHistoryLabel,productHistoryMessage: String
+}
+
+// MARK: Errors convenience initializers and mutators
+
+extension EmptyTable {
+    init(data: Data) throws {
+        self = try newJSONDecoder().decode(EmptyTable.self, from: data)
+    }
+    
+    init(_ json: String, using encoding: String.Encoding = .utf8) throws {
+        guard let data = json.data(using: encoding) else {
+            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
+        }
+        try self.init(data: data)
+    }
+    
+    init(fromURL url: URL) throws {
+        try self.init(data: try Data(contentsOf: url))
+    }
+    
+    func with(
+        searchHistoryLabel: String? = nil,
+        searchHistoryMessage: String? = nil,
+        exchangeHistoryLabel: String? = nil,
+        exchangeHistoryMessage: String? = nil,
+        productHistoryLabel: String? = nil,
+        productHistoryMessage: String? = nil
+    ) -> EmptyTable {
+        return EmptyTable(
+            searchHistoryLabel: searchHistoryLabel ?? self.searchHistoryLabel,
+            searchHistoryMessage: searchHistoryMessage ?? self.searchHistoryMessage,
+            exchangeHistoryLabel: exchangeHistoryLabel ?? self.exchangeHistoryLabel,
+            exchangeHistoryMessage: exchangeHistoryMessage ?? self.exchangeHistoryMessage,
+            productHistoryLabel: productHistoryLabel ?? self.productHistoryLabel,
+            productHistoryMessage: productHistoryMessage ?? self.productHistoryMessage
         )
     }
     
@@ -308,6 +380,140 @@ extension LanguagePicker {
     }
 }
 
+
+
+// MARK: - ConnectAlert
+struct ConnectAlert: Codable {
+    let title, subTitle: String
+}
+
+// MARK: connectAlert convenience initializers and mutators
+
+extension ConnectAlert {
+    init(data: Data) throws {
+        self = try newJSONDecoder().decode(ConnectAlert.self, from: data)
+    }
+    
+    init(_ json: String, using encoding: String.Encoding = .utf8) throws {
+        guard let data = json.data(using: encoding) else {
+            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
+        }
+        try self.init(data: data)
+    }
+    
+    init(fromURL url: URL) throws {
+        try self.init(data: try Data(contentsOf: url))
+    }
+    
+    func with(
+        title: String? = nil,
+        subTitle: String? = nil
+    ) -> ConnectAlert {
+        return ConnectAlert(
+            title: title ?? self.title,
+            subTitle: subTitle ?? self.subTitle
+        )
+    }
+    
+    func jsonData() throws -> Data {
+        return try newJSONEncoder().encode(self)
+    }
+    
+    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
+        return String(data: try self.jsonData(), encoding: encoding)
+    }
+}
+
+
+// MARK: - ConnectAlert
+struct CreateProfileForCardAlert: Codable {
+    let title, subTitle: String
+}
+
+// MARK: connectAlert convenience initializers and mutators
+
+extension CreateProfileForCardAlert {
+    init(data: Data) throws {
+        self = try newJSONDecoder().decode(CreateProfileForCardAlert.self, from: data)
+    }
+    
+    init(_ json: String, using encoding: String.Encoding = .utf8) throws {
+        guard let data = json.data(using: encoding) else {
+            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
+        }
+        try self.init(data: data)
+    }
+    
+    init(fromURL url: URL) throws {
+        try self.init(data: try Data(contentsOf: url))
+    }
+    
+    func with(
+        title: String? = nil,
+        subTitle: String? = nil
+    ) -> CreateProfileForCardAlert {
+        return CreateProfileForCardAlert(
+            title: title ?? self.title,
+            subTitle: subTitle ?? self.subTitle
+        )
+    }
+    
+    func jsonData() throws -> Data {
+        return try newJSONEncoder().encode(self)
+    }
+    
+    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
+        return String(data: try self.jsonData(), encoding: encoding)
+    }
+}
+
+
+// MARK: - SmsMailPicker
+struct SmsMailPicker: Codable {
+    let title, subTitle, sms, email: String
+}
+
+// MARK: SmsMailPicker convenience initializers and mutators
+
+extension SmsMailPicker {
+    init(data: Data) throws {
+        self = try newJSONDecoder().decode(SmsMailPicker.self, from: data)
+    }
+    
+    init(_ json: String, using encoding: String.Encoding = .utf8) throws {
+        guard let data = json.data(using: encoding) else {
+            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
+        }
+        try self.init(data: data)
+    }
+    
+    init(fromURL url: URL) throws {
+        try self.init(data: try Data(contentsOf: url))
+    }
+    
+    func with(
+        title: String? = nil,
+        subTitle: String? = nil,
+        sms: String? = nil,
+        email: String? = nil
+    ) -> SmsMailPicker {
+        return SmsMailPicker(
+            title: title ?? self.title,
+            subTitle: subTitle ?? self.subTitle,
+            sms: sms ?? self.sms,
+            email: email ?? self.email
+        )
+    }
+    
+    func jsonData() throws -> Data {
+        return try newJSONEncoder().encode(self)
+    }
+    
+    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
+        return String(data: try self.jsonData(), encoding: encoding)
+    }
+}
+
 // MARK: - OtpScreen
 struct OtpScreen: Codable {
     let header, title, message, resend: String
@@ -403,8 +609,7 @@ extension PersonalInfoScreen {
 
 // MARK: - TextFieldPlaceHolders
 struct TextFieldPlaceHolders: Codable {
-    let email, phone, userName, firstName, lastName: String
-    let password: String
+    var email, phone, userName, firstName, lastName, password, job, company, search: String
 }
 
 // MARK: TextFieldPlaceHolders convenience initializers and mutators
@@ -431,7 +636,10 @@ extension TextFieldPlaceHolders {
         firstName: String? = nil,
         lastName: String? = nil,
         password: String? = nil,
-        userName: String? = nil
+        userName: String? = nil,
+        job: String? = nil,
+        company: String? = nil,
+        search: String? = nil
     ) -> TextFieldPlaceHolders {
         return TextFieldPlaceHolders(
             email: email ?? self.email,
@@ -439,7 +647,10 @@ extension TextFieldPlaceHolders {
             userName: userName ?? self.userName,
             firstName: firstName ?? self.firstName,
             lastName: lastName ?? self.lastName,
-            password: password ?? self.password
+            password: password ?? self.password,
+            job: job ?? self.job,
+            company: company ?? self.company,
+            search:  search ?? self.search
         )
     }
     

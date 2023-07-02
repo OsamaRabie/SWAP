@@ -15,6 +15,8 @@ import SSSpinnerButton
 import AuthenticationServices
 import Hero
 import Toast
+import FirebaseStorage
+import KeychainStore
 
 class ViewController: UIViewController {
 
@@ -32,6 +34,7 @@ class ViewController: UIViewController {
     @IBOutlet var toBeLocalizedViews: [UIView]!
     @IBOutlet weak var currentLanguageImageView: UIImageView!
     @IBOutlet weak var continueButton: SSSpinnerButton!
+    @IBOutlet weak var skipButton: UIButton!
     @IBOutlet weak var termsConditionsLabel: UILabel!
     @IBOutlet weak var orContinueWithLabel: UILabel!
     
@@ -45,6 +48,7 @@ class ViewController: UIViewController {
         setHeroIDs()
         self.navigationController?.hero.isEnabled = true
         self.hero.isEnabled = true
+        checkIfUserIsLogged()
     }
     
     
@@ -71,16 +75,47 @@ class ViewController: UIViewController {
         setDelegates()
         updateContinueButton()
     }
+    
+    /// Checks if the user is already logged in so we can move him right away
+    func checkIfUserIsLogged() {
+        // Check if  there is a stored user key
+        guard let firebaseKey:String = SwapKeyChain.firebaseKeyForLoggedInUser() else { return }
+        
+        // Now let us fetch the user from firebase
+        continueButton.startAnimate(spinnerType: SpinnerType.circleStrokeSpin, spinnercolor: UIColor(named: "ActionButtonTitleColor") ?? .black, spinnerSize: 20, complete: {
+            // Your code here
+            SwapFirebaseUsers.fetchUser(key: firebaseKey) { userCard in
+                SwapFirebaseUsers.currentUserCard = userCard
+                let homePageViewController:HomePageViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomePageViewController") as! HomePageViewController
+                self.navigationController?.pushViewController(homePageViewController, animated: true)
+            } onNotFound: {
+                self.continueButton.stopAnimationWithCompletionTypeAndBackToDefaults(completionType: .none, backToDefaults: true, complete: nil)
+                SwapKeyChain.updateFirebaseKeyForLoggedInUser(with: nil)
+            } onError: { error in
+                self.continueButton.stopAnimationWithCompletionTypeAndBackToDefaults(completionType: .none, backToDefaults: true, complete: nil)
+                SwapKeyChain.updateFirebaseKeyForLoggedInUser(with: nil)
+                self.view.showError(title: error)
+            }
+        })
+    }
 }
 
 //MARK: Theme based methods
 extension ViewController {
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        setTheme()
+        setFonts()
+    }
+    
     /// setting the fonts for all the related sub views
     func setFonts() {
         // Labels
         headerTitleLabel.font = MenodagFont.localizedFont(for: .PoppinsBold, with: 32)
         subHeaderTitleLabel.font = MenodagFont.localizedFont(for: .PoppinsRegular, with: 14)
         continueButton.titleLabel?.font = MenodagFont.localizedFont(for: .PoppinsMedium, with: 18)
+        skipButton.titleLabel?.font = MenodagFont.localizedFont(for: .PoppinsBold, with: 22)
         termsConditionsLabel.font = MenodagFont.localizedFont(for: .PoppinsRegular, with: 14)
         orContinueWithLabel.font = MenodagFont.localizedFont(for: .PoppinsMedium, with: 14)
         
@@ -115,6 +150,7 @@ extension ViewController {
         subHeaderTitleLabel.text = sharedLocalisationManager.localization.getStarted.subHeader
         forgotPasswordButton.setTitle(sharedLocalisationManager.localization.getStarted.forgorPassword, for: .normal)
         continueButton.setTitle(sharedLocalisationManager.localization.buttonTitles.buttonTitlesContinue, for: .normal)
+        skipButton.setTitle(sharedLocalisationManager.localization.buttonTitles.skip, for: .normal)
         termsConditionsLabel.text = sharedLocalisationManager.localization.getStarted.termsConditions
         orContinueWithLabel.text = sharedLocalisationManager.localization.getStarted.orContinueWith
         
@@ -148,7 +184,7 @@ extension ViewController {
     /// Will enable/disable the continue button based on the validity of the data inside the card :)
     func updateContinueButton(with phone:String = "") {
         // Let us see how valid the current card user is
-        let (isValid, errorMessage) = Card.validate(field: .phone, value: phone)
+        let (isValid, _) = Card.validate(field: .phone, value: phone)
         // Define animation attributes
         var finalAlpha = 1.0
         var zoomScale = 1.0
@@ -210,10 +246,18 @@ extension ViewController {
             self.view.showError(title: "A problem occured, please try again later")
             return
         }
-        continueButton.startAnimate(spinnerType: SpinnerType.circleStrokeSpin, spinnercolor: UIColor(named: "ActionButtonTitleColor") ?? .black, spinnerSize: 30, complete: {
+        continueButton.startAnimate(spinnerType: SpinnerType.circleStrokeSpin, spinnercolor: UIColor(named: "ActionButtonTitleColor") ?? .black, spinnerSize: 20, complete: {
             // Your code here
             self.sendOTP(to: phone)
         })
+    }
+    
+    
+    /// Handle skipping
+    @IBAction private func skipClicked(_ sender: Any) {
+        SwapKeyChain.updateFirebaseKeyForLoggedInUser(with: nil)
+        let homePageViewController:HomePageViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomePageViewController") as! HomePageViewController
+        self.navigationController?.pushViewController(homePageViewController, animated: true)
     }
     
     
@@ -385,11 +429,16 @@ extension ViewController: ASAuthorizationControllerDelegate {
         // let us check if we have a registered user or not first
         SwapFirebaseUsers.fetchUser(email: email) { userCard in
             // This means the user is registered and has basic info added
+            DispatchQueue.main.async {
+                SwapFirebaseUsers.currentUserCard = userCard
+                let homePageViewController:HomePageViewController = self.storyboard?.instantiateViewController(withIdentifier: "HomePageViewController") as! HomePageViewController
+                self.navigationController?.pushViewController(homePageViewController, animated: true)
+            }
         } onNotFound: {
             // This means the user is not registered, so we need him to fill in his data
             self.continueButton.stopAnimatingWithCompletionType(completionType: .none) {
                 // let us create the user card and fill in the email
-                SwapFirebaseUsers.currentUserCard = .init(contactData: .init(phone: nil, email: email), personalData: .init(), professionalData: .init())
+                SwapFirebaseUsers.currentUserCard = .init(contactData: .init(phone: "", email: email), personalData: .init(fistName: "", lastName: "", userName: "", photo: ""), professionalData: .init(company: "", title: "", linkedIn: "", faceBook: "", twitter: "", dribble: "", github: ""))
                 // let us move to the sign up process controller
                 let personalInfoViewController:PersonalInfoViewController = self.storyboard?.instantiateViewController(withIdentifier: "PersonalInfoViewController") as! PersonalInfoViewController
                 self.navigationController?.pushViewController(personalInfoViewController, animated: true)

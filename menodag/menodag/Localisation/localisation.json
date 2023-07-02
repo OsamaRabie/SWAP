@@ -23,7 +23,10 @@
         "buttonTitles": {
             "continue": "Continue",
             "cancel": "Cancel",
-            "complete": "Complete"
+            "complete": "Complete",
+            "ok":"OK",
+            "skip": "Skip ⚡️",
+            "delete":"Delete account"
         },
         "textFieldPlaceHolders": {
             "email": "Email address",
@@ -31,7 +34,10 @@
             "firstName": "First name",
             "lastName": "Last name",
             "password": "Password",
-            "userName": "Username"
+            "userName": "Username",
+            "job":"Job title",
+            "company":"Company name",
+            "search":"Seach by phone Or name"
         },
         "languagePicker":{
             "title":"Language",
@@ -39,12 +45,36 @@
             "english":"English",
             "arabic":"العربية"
         },
+        "smsMailPicker":{
+            "title":"Reach out",
+            "subTitle":"Choose your preferred mean",
+            "sms":"SMS",
+            "email":"Email"
+        },
+        "connectAlert":{
+            "title":"Request sent!",
+            "subTitle":"You will be notified once %@ accepts the request.\nThen whenver his/her data is changed you will be notified automatically."
+        },
+        "createProfileForCardAlert":{
+            "title":"Sorry!",
+            "subTitle":"You will need to provide us with all your details like phone, email, etc.\nSo we can provide you an e-card and share your details across the whole network."
+        },
         "errors":{
             "signWithPhoneError":"A problem occured, please try again later",
-            "firstNameError":"Required, minimum of 3 charachters",
-            "userNameError":"Required, minimum of 3 charachters",
-            "phoneError":"Required, must be 8 digits",
-            "emailError":"Required, must be a valid email"
+            "firstNameError":"Name required, minimum of 3 charachters",
+            "userNameError":"User required, minimum of 3 charachters",
+            "phoneError":"Phone required, must be 8 digits",
+            "emailError":"Email required, must be a valid email",
+            "jobError":"Job required, minimum of 3 charachters",
+            "companyError":"Company required, minimum of 3 charachters"
+        },
+        "emptyTable":{
+            "searchHistoryLabel":"No search history",
+            "searchHistoryMessage":"Please try making some search functions and if any results did match, it will appear here for faster access whenever needed again.",
+            "exchangeHistoryLabel":"No exchange history",
+            "exchangeHistoryMessage":"Please send data exchange requests to others or Tap your NFC card on others' devices to see the list of connected persons in here.",
+            "productHistoryLabel":"You haven't activated any card. Yet!",
+            "productHistoryMessage":"Order your e-card now, SWAP it anywhere you go and keep in touch all the time with your professional network."
         }
     },
     "ar": {
@@ -71,7 +101,10 @@
         "buttonTitles": {
             "continue": "إستمرار",
             "cancel": "إلغاء",
-            "complete": "إستكمال"
+            "complete": "إستكمال",
+            "ok": "أوك",
+            "skip": "تخطي ⚡️",
+            "delete":"إمسح الحساب"
         },
         "textFieldPlaceHolders": {
             "email": "البريد الإلكتروني",
@@ -79,7 +112,10 @@
             "firstName": "الإسم الأول",
             "lastName": "الإسم الأخير",
             "password": "كلمة السر",
-            "userName":"إسم المستخدم"
+            "userName":"إسم المستخدم",
+            "job":"المسمى الوظيفي",
+            "company":"إسم الشركة",
+            "search":"إبحث بالإسم أو الرقم"
         },
         "languagePicker":{
             "title":"اللغة",
@@ -87,12 +123,36 @@
             "english":"English",
             "arabic":"العربية"
         },
+        "smsMailPicker":{
+            "title":"تواصل",
+            "subTitle":"إختر طريقتك المفضلة",
+            "sms":"SMS",
+            "email":"بريد إلكتروني"
+        },
+        "connectAlert":{
+            "title":"تم إرسال الطلب!",
+            "subTitle":"سيتم إخطارك بمجرد قبول%@ الطلب.\nوبعد ذلك سيتم إعلامك تلقائيًا متى تم تغيير بياناته."
+        },
+        "createProfileForCardAlert":{
+            "title":"عفواً",
+            "subTitle":"ستحتاج إلى تزويدنا بجميع التفاصيل الخاصة بك مثل الهاتف والبريد الإلكتروني وما إلى ذلك. \n حتى نتمكن من تزويدك ببطاقة إلكترونية ومشاركة بياناتك عبر الشبكة بالكامل."
+        },
         "errors":{
             "signWithPhoneError":"مشكله حصلت، برجاء المحالة مرة أخرى",
-            "firstNameError":"مطلوب ، 3 أحرف على الأقل",
-            "userNameError":"مطلوب ، 3 أحرف على الأقل",
+            "firstNameError":"الإسم مطلوب ، 3 أحرف على الأقل",
+            "userNameError":"مستخدم مطلوب ، 3 أحرف على الأقل",
             "phoneError":"إجباري ، يجب أن يكون 8 أرقام",
-            "emailError":"مطلوب ، يجب أن يكون بريدًا إلكترونيًا صالحًا"
+            "emailError":"مطلوب ، يجب أن يكون بريدًا إلكترونيًا صالحًا",
+            "jobError":"الوظيفة المطلوبة ، بحد أدنى 3 أحرف",
+            "companyError":"الشركة المطلوبة ، بحد أدنى 3 أحرف"
+        },
+        "emptyTable":{
+            "searchHistoryLabel":"لا يوجد بحث سابق",
+            "searchHistoryMessage":"يرجى محاولة إجراء بعض وظائف البحث وإذا كانت هناك أي نتائج مطابقة ، فستظهر هنا للوصول السريع كلما دعت الحاجة مرة أخرى.",
+            "exchangeHistoryLabel":"لا يوجد تبادل سابق",
+            "exchangeHistoryMessage":"يرجى إرسال طلبات تبادل البيانات للآخرين أو الضغط على بطاقة NFC الخاصة بك على أجهزة الآخرين لرؤية قائمة الأشخاص المتصلين هنا.",
+            "productHistoryLabel":"لم فعل أي كارت. بعد!",
+            "productHistoryMessage":"اطلب بطاقتك الإلكترونية الآن ، وقم بتبديلها في أي مكان تذهب إليه وابق على اتصال دائم بشبكتك المهنية."
         }
     }
 }

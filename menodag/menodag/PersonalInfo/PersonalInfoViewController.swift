@@ -24,7 +24,7 @@ class PersonalInfoViewController: UIViewController {
     @IBOutlet weak var emailAddressTextField: UITextField!
     @IBOutlet weak var footerLabel: UILabel!
     @IBOutlet var toBeLocalizedViews: [UIView]!
-    
+    @IBOutlet weak var deleteAccountButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -49,8 +49,8 @@ class PersonalInfoViewController: UIViewController {
             emailAddressTextField.text  = contactData.email
             phoneNumberTextField.text   = contactData.phone
             // These fields will not be editable
-            if let _ = contactData.email { emailAddressTextField.isEnabled  = false }
-            if let _ = contactData.phone { phoneNumberTextField.isEnabled   = false }
+            if !contactData.email.isEmpty { emailAddressTextField.isEnabled  = false }
+            if !contactData.phone.isEmpty { phoneNumberTextField.isEnabled   = false }
         }
         
         // Fill in the personal data
@@ -58,6 +58,15 @@ class PersonalInfoViewController: UIViewController {
             firstNameTextField.text = personalData.fistName
             lastNameTextField.text  = personalData.lastName
             userNameTextField.text  = personalData.userName
+        }
+        
+        // If he is logged already, we need to show the delete account button
+        if let _ = SwapKeyChain.firebaseKeyForLoggedInUser() {
+            deleteAccountButton.isHidden = false
+            footerLabel.isHidden = true
+        }else{
+            deleteAccountButton.isHidden = true
+            footerLabel.isHidden = false
         }
     }
     
@@ -75,6 +84,8 @@ class PersonalInfoViewController: UIViewController {
         phoneNumberTextField.hero.id = HeroIDsConstants.phoneTextField.rawValue
         headerLabel.hero.id = HeroIDsConstants.headerLabel.rawValue
         subHeaderLabel.hero.id = HeroIDsConstants.subHeaderLabel.rawValue
+        firstNameTextField.hero.id = HeroIDsConstants.firstNameTextField.rawValue
+        lastNameTextField.hero.id = HeroIDsConstants.lastNameTextField.rawValue
     }
     
     /// Will assign textfield delegate to all the text fiels to self
@@ -86,7 +97,7 @@ class PersonalInfoViewController: UIViewController {
     func updateContinueButton() {
         
         // Let us see how valid the current card user is
-        let (validContact, personalContact) = SwapFirebaseUsers.currentUserHasValidData()
+        let (validContact, personalContact, _) = SwapFirebaseUsers.currentUserHasValidData()
         // Define animation attributes
         var finalAlpha = 1.0
         var zoomScale = 1.0
@@ -108,6 +119,7 @@ class PersonalInfoViewController: UIViewController {
         })
         continueButton.isEnabled = isEnabled
     }
+    
     
     /// Decides each text field is connected to which field inside the card
     /// - Parameter textField: The textfield that we want to connect
@@ -132,12 +144,38 @@ extension PersonalInfoViewController {
     @IBAction func backButtonClicked(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func deleteButtonClicked(_ sender: Any) {
+        let alert:UIAlertController = .init(title: "Delete the account?", message: "Do you want to delete your account from our network?", preferredStyle: .actionSheet)
+        alert.addAction(.init(title: "Delete", style: .destructive,handler: { _ in
+            SwapFirebaseUsers.deleteUser {
+                self.navigationController?.popViewController(animated: true)
+            } onError: { error in
+                self.view.showError(title: error)
+            }
+
+        }))
+        alert.addAction(.init(title: "Cancel", style: .cancel))
+        present(alert, animated: true)
+    }
+    
+    @IBAction func continueButtonClicked(_ sender: Any) {
+        let businessInfoViewController:BusinessInfoViewController = self.storyboard?.instantiateViewController(withIdentifier: "BusinessInfoViewController") as! BusinessInfoViewController
+        self.navigationController?.pushViewController(businessInfoViewController, animated: true)
+    }
 }
 
 
 
 //MARK: Theme based methods
 extension PersonalInfoViewController {
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        setTheme()
+        setFonts()
+    }
+    
     /// setting the fonts for all the related sub views
     func setFonts() {
         // Labels
@@ -168,6 +206,7 @@ extension PersonalInfoViewController {
         
         // Buttons
         continueButton.titleLabel?.font = MenodagFont.localizedFont(for: .PoppinsMedium, with: 18)
+        deleteAccountButton.titleLabel?.font = MenodagFont.localizedFont(for: .PoppinsLight, with: 14)
     }
     
     /// Adjust the theme needed values
@@ -198,6 +237,7 @@ extension PersonalInfoViewController {
         footerLabel.text    = sharedLocalisationManager.localization.personalInfoScreen.footer
         // buttons
         continueButton.setTitle(sharedLocalisationManager.localization.buttonTitles.buttonTitlesContinue, for: .normal)
+        deleteAccountButton.setTitle(sharedLocalisationManager.localization.buttonTitles.delete, for: .normal)
         backButton.setTitle("", for: .normal)
     }
     

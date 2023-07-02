@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E832FF382A4E9EA200548120 /* UserCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E832FF362A4E9EA200548120 /* UserCardTableViewCell.swift */; };
+		E832FF392A4E9EA200548120 /* UserCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E832FF372A4E9EA200548120 /* UserCardTableViewCell.xib */; };
+		E832FF3C2A4EA7FF00548120 /* Longinus in Frameworks */ = {isa = PBXBuildFile; productRef = E832FF3B2A4EA7FF00548120 /* Longinus */; };
+		E832FF442A4ECDD600548120 /* EmptyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E832FF432A4ECDD600548120 /* EmptyTableView.swift */; };
+		E832FF462A4ECDE300548120 /* EmptyTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E832FF452A4ECDE300548120 /* EmptyTableView.xib */; };
+		E832FF482A4EEA4A00548120 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E832FF472A4EEA4A00548120 /* ProfileViewController.swift */; };
 		E83A6A9C2A33456B0074D2F8 /* JWTDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A6A992A33456B0074D2F8 /* JWTDecode.swift */; };
 		E83A6A9D2A33456B0074D2F8 /* JWTDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A6A9A2A33456B0074D2F8 /* JWTDecodeError.swift */; };
 		E83A6A9E2A33456B0074D2F8 /* JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = E83A6A9B2A33456B0074D2F8 /* JWT.swift */; };
@@ -25,6 +31,36 @@
 		E86E17C32A19410B0053A1E9 /* Menodag+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E17C22A19410B0053A1E9 /* Menodag+View.swift */; };
 		E86E17C62A1949440053A1E9 /* UIGradient in Frameworks */ = {isa = PBXBuildFile; productRef = E86E17C52A1949440053A1E9 /* UIGradient */; };
 		E86E17C82A194A780053A1E9 /* Menodag+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86E17C72A194A780053A1E9 /* Menodag+UIColor.swift */; };
+		E87A42F02A505A8E00658AB6 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A42EF2A505A8E00658AB6 /* ProductsViewController.swift */; };
+		E87A42FB2A506ED200658AB6 /* ProductHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A42FA2A506ED200658AB6 /* ProductHistory.swift */; };
+		E87A42FE2A50A47000658AB6 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A42FC2A50A47000658AB6 /* CardTableViewCell.swift */; };
+		E87A42FF2A50A47000658AB6 /* CardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E87A42FD2A50A47000658AB6 /* CardTableViewCell.xib */; };
+		E87A436E2A514C8800658AB6 /* ImageSparkViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A43542A514C8800658AB6 /* ImageSparkViewFactory.swift */; };
+		E87A436F2A514C8800658AB6 /* CircleColorSparkViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A43552A514C8800658AB6 /* CircleColorSparkViewFactory.swift */; };
+		E87A43702A514C8800658AB6 /* CircleColorSparkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A43562A514C8800658AB6 /* CircleColorSparkView.swift */; };
+		E87A43712A514C8800658AB6 /* ImageSparkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A43572A514C8800658AB6 /* ImageSparkView.swift */; };
+		E87A43722A514C8800658AB6 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A43592A514C8800658AB6 /* CGPoint+Extensions.swift */; };
+		E87A43732A514C8800658AB6 /* SparkTrajectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A435B2A514C8800658AB6 /* SparkTrajectory.swift */; };
+		E87A43742A514C8800658AB6 /* SparkTrajectoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A435C2A514C8800658AB6 /* SparkTrajectoryFactory.swift */; };
+		E87A43752A514C8800658AB6 /* FireworkSparkScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A435D2A514C8800658AB6 /* FireworkSparkScheduler.swift */; };
+		E87A43762A514C8800658AB6 /* Firework.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A435E2A514C8800658AB6 /* Firework.swift */; };
+		E87A43772A514C8800658AB6 /* SparkViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A435F2A514C8800658AB6 /* SparkViewAnimator.swift */; };
+		E87A43782A514C8800658AB6 /* SparkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A43602A514C8800658AB6 /* SparkView.swift */; };
+		E87A43792A514C8800658AB6 /* SparkViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A43612A514C8800658AB6 /* SparkViewFactory.swift */; };
+		E87A437A2A514C8800658AB6 /* FireworkSpark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A43622A514C8800658AB6 /* FireworkSpark.swift */; };
+		E87A437B2A514C8800658AB6 /* FountainFirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A43642A514C8800658AB6 /* FountainFirework.swift */; };
+		E87A437C2A514C8800658AB6 /* FountainFireworkAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A43652A514C8800658AB6 /* FountainFireworkAnimator.swift */; };
+		E87A437D2A514C8800658AB6 /* FountainFireworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A43662A514C8800658AB6 /* FountainFireworkController.swift */; };
+		E87A437E2A514C8800658AB6 /* FountainSparkTrajectoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A43672A514C8800658AB6 /* FountainSparkTrajectoryFactory.swift */; };
+		E87A437F2A514C8800658AB6 /* ClassicSparkTrajectoryFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A43692A514C8800658AB6 /* ClassicSparkTrajectoryFactoryProtocol.swift */; };
+		E87A43802A514C8800658AB6 /* ClassicFireworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A436A2A514C8800658AB6 /* ClassicFireworkController.swift */; };
+		E87A43812A514C8800658AB6 /* ClassicSparkTrajectoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A436B2A514C8800658AB6 /* ClassicSparkTrajectoryFactory.swift */; };
+		E87A43822A514C8800658AB6 /* ClassicFireworkAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A436C2A514C8800658AB6 /* ClassicFireworkAnimator.swift */; };
+		E87A43832A514C8800658AB6 /* ClassicFirework.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A436D2A514C8800658AB6 /* ClassicFirework.swift */; };
+		E87A43862A5161D700658AB6 /* KeychainStore in Frameworks */ = {isa = PBXBuildFile; productRef = E87A43852A5161D700658AB6 /* KeychainStore */; };
+		E87A43882A5164DD00658AB6 /* Menodag+Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A43872A5164DD00658AB6 /* Menodag+Keychain.swift */; };
+		E87A438A2A51829400658AB6 /* Menodag+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A43892A51829400658AB6 /* Menodag+Array.swift */; };
+		E87A438C2A51917C00658AB6 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E87A438B2A51917C00658AB6 /* SearchResultsViewController.swift */; };
 		E891713F2A45BB8A000223C2 /* PersonalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891713E2A45BB8A000223C2 /* PersonalInfoViewController.swift */; };
 		E89171422A45C2BD000223C2 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = E89171412A45C2BD000223C2 /* Hero */; };
 		E89171442A45C5EE000223C2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89171432A45C5EE000223C2 /* Constants.swift */; };
@@ -36,6 +72,11 @@
 		E891717F2A4AE740000223C2 /* BusinessInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891717E2A4AE740000223C2 /* BusinessInfoViewController.swift */; };
 		E89171812A4AFCC1000223C2 /* SocialMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89171802A4AFCC1000223C2 /* SocialMedia.swift */; };
 		E89171832A4AFCD0000223C2 /* SocialMedia.xib in Resources */ = {isa = PBXBuildFile; fileRef = E89171822A4AFCD0000223C2 /* SocialMedia.xib */; };
+		E89171862A4C305F000223C2 /* ViewAnimator in Frameworks */ = {isa = PBXBuildFile; productRef = E89171852A4C305F000223C2 /* ViewAnimator */; };
+		E89171882A4C4A93000223C2 /* Menodag+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E89171872A4C4A93000223C2 /* Menodag+UIImage.swift */; };
+		E891718B2A4C78EC000223C2 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891718A2A4C78EC000223C2 /* HomePageViewController.swift */; };
+		E891718D2A4D57ED000223C2 /* Menodag+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E891718C2A4D57ED000223C2 /* Menodag+UITextField.swift */; };
+		E89171902A4D6523000223C2 /* HMSegmentedControl in Frameworks */ = {isa = PBXBuildFile; productRef = E891718F2A4D6523000223C2 /* HMSegmentedControl */; };
 		E8BF3AA72A0FEBD900F0D97A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF3AA62A0FEBD900F0D97A /* AppDelegate.swift */; };
 		E8BF3AA92A0FEBD900F0D97A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF3AA82A0FEBD900F0D97A /* SceneDelegate.swift */; };
 		E8BF3AAB2A0FEBD900F0D97A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BF3AAA2A0FEBD900F0D97A /* ViewController.swift */; };
@@ -64,6 +105,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E832FF362A4E9EA200548120 /* UserCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCardTableViewCell.swift; sourceTree = "<group>"; };
+		E832FF372A4E9EA200548120 /* UserCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserCardTableViewCell.xib; sourceTree = "<group>"; };
+		E832FF432A4ECDD600548120 /* EmptyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyTableView.swift; sourceTree = "<group>"; };
+		E832FF452A4ECDE300548120 /* EmptyTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyTableView.xib; sourceTree = "<group>"; };
+		E832FF472A4EEA4A00548120 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E83A6A992A33456B0074D2F8 /* JWTDecode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWTDecode.swift; sourceTree = "<group>"; };
 		E83A6A9A2A33456B0074D2F8 /* JWTDecodeError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWTDecodeError.swift; sourceTree = "<group>"; };
 		E83A6A9B2A33456B0074D2F8 /* JWT.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JWT.swift; sourceTree = "<group>"; };
@@ -73,12 +119,44 @@
 		E86E17C02A1940A40053A1E9 /* Menodag+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Menodag+String.swift"; sourceTree = "<group>"; };
 		E86E17C22A19410B0053A1E9 /* Menodag+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Menodag+View.swift"; sourceTree = "<group>"; };
 		E86E17C72A194A780053A1E9 /* Menodag+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Menodag+UIColor.swift"; sourceTree = "<group>"; };
+		E87A42EF2A505A8E00658AB6 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		E87A42FA2A506ED200658AB6 /* ProductHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductHistory.swift; sourceTree = "<group>"; };
+		E87A42FC2A50A47000658AB6 /* CardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		E87A42FD2A50A47000658AB6 /* CardTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardTableViewCell.xib; sourceTree = "<group>"; };
+		E87A43542A514C8800658AB6 /* ImageSparkViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSparkViewFactory.swift; sourceTree = "<group>"; };
+		E87A43552A514C8800658AB6 /* CircleColorSparkViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleColorSparkViewFactory.swift; sourceTree = "<group>"; };
+		E87A43562A514C8800658AB6 /* CircleColorSparkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleColorSparkView.swift; sourceTree = "<group>"; };
+		E87A43572A514C8800658AB6 /* ImageSparkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSparkView.swift; sourceTree = "<group>"; };
+		E87A43592A514C8800658AB6 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		E87A435B2A514C8800658AB6 /* SparkTrajectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkTrajectory.swift; sourceTree = "<group>"; };
+		E87A435C2A514C8800658AB6 /* SparkTrajectoryFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkTrajectoryFactory.swift; sourceTree = "<group>"; };
+		E87A435D2A514C8800658AB6 /* FireworkSparkScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireworkSparkScheduler.swift; sourceTree = "<group>"; };
+		E87A435E2A514C8800658AB6 /* Firework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Firework.swift; sourceTree = "<group>"; };
+		E87A435F2A514C8800658AB6 /* SparkViewAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkViewAnimator.swift; sourceTree = "<group>"; };
+		E87A43602A514C8800658AB6 /* SparkView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkView.swift; sourceTree = "<group>"; };
+		E87A43612A514C8800658AB6 /* SparkViewFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SparkViewFactory.swift; sourceTree = "<group>"; };
+		E87A43622A514C8800658AB6 /* FireworkSpark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireworkSpark.swift; sourceTree = "<group>"; };
+		E87A43642A514C8800658AB6 /* FountainFirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FountainFirework.swift; sourceTree = "<group>"; };
+		E87A43652A514C8800658AB6 /* FountainFireworkAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FountainFireworkAnimator.swift; sourceTree = "<group>"; };
+		E87A43662A514C8800658AB6 /* FountainFireworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FountainFireworkController.swift; sourceTree = "<group>"; };
+		E87A43672A514C8800658AB6 /* FountainSparkTrajectoryFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FountainSparkTrajectoryFactory.swift; sourceTree = "<group>"; };
+		E87A43692A514C8800658AB6 /* ClassicSparkTrajectoryFactoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassicSparkTrajectoryFactoryProtocol.swift; sourceTree = "<group>"; };
+		E87A436A2A514C8800658AB6 /* ClassicFireworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassicFireworkController.swift; sourceTree = "<group>"; };
+		E87A436B2A514C8800658AB6 /* ClassicSparkTrajectoryFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassicSparkTrajectoryFactory.swift; sourceTree = "<group>"; };
+		E87A436C2A514C8800658AB6 /* ClassicFireworkAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassicFireworkAnimator.swift; sourceTree = "<group>"; };
+		E87A436D2A514C8800658AB6 /* ClassicFirework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassicFirework.swift; sourceTree = "<group>"; };
+		E87A43872A5164DD00658AB6 /* Menodag+Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Menodag+Keychain.swift"; sourceTree = "<group>"; };
+		E87A43892A51829400658AB6 /* Menodag+Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Menodag+Array.swift"; sourceTree = "<group>"; };
+		E87A438B2A51917C00658AB6 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		E891713E2A45BB8A000223C2 /* PersonalInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoViewController.swift; sourceTree = "<group>"; };
 		E89171432A45C5EE000223C2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E891714C2A46A269000223C2 /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
 		E891717E2A4AE740000223C2 /* BusinessInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessInfoViewController.swift; sourceTree = "<group>"; };
 		E89171802A4AFCC1000223C2 /* SocialMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMedia.swift; sourceTree = "<group>"; };
 		E89171822A4AFCD0000223C2 /* SocialMedia.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SocialMedia.xib; sourceTree = "<group>"; };
+		E89171872A4C4A93000223C2 /* Menodag+UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Menodag+UIImage.swift"; sourceTree = "<group>"; };
+		E891718A2A4C78EC000223C2 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		E891718C2A4D57ED000223C2 /* Menodag+UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Menodag+UITextField.swift"; sourceTree = "<group>"; };
 		E8BF3AA32A0FEBD900F0D97A /* menodag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = menodag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8BF3AA62A0FEBD900F0D97A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8BF3AA82A0FEBD900F0D97A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,8 +194,11 @@
 				E891714A2A461B96000223C2 /* InitialsImageView in Frameworks */,
 				E83FC91A2A21BBE100E6AA96 /* SSSpinnerButtonr in Frameworks */,
 				E86E17B42A18F6210053A1E9 /* FirebaseDatabaseSwift in Frameworks */,
+				E89171902A4D6523000223C2 /* HMSegmentedControl in Frameworks */,
 				E86E17BC2A18F6210053A1E9 /* FirebaseStorageCombine-Community in Frameworks */,
+				E832FF3C2A4EA7FF00548120 /* Longinus in Frameworks */,
 				E8BF3AE72A12273800F0D97A /* MOLH in Frameworks */,
+				E87A43862A5161D700658AB6 /* KeychainStore in Frameworks */,
 				E86E17BA2A18F6210053A1E9 /* FirebaseRemoteConfigSwift in Frameworks */,
 				E86E17C62A1949440053A1E9 /* UIGradient in Frameworks */,
 				E89171782A4ABCA9000223C2 /* IQKeyboardManagerSwift in Frameworks */,
@@ -125,6 +206,7 @@
 				E86E17B22A18F6200053A1E9 /* FirebaseAuth in Frameworks */,
 				E891717D2A4AD919000223C2 /* Toast in Frameworks */,
 				E86E17AC2A18E07B0053A1E9 /* SwiftMessages in Frameworks */,
+				E89171862A4C305F000223C2 /* ViewAnimator in Frameworks */,
 				E89171472A461A56000223C2 /* YPImagePicker in Frameworks */,
 				E83FC9172A21169600E6AA96 /* BJOTPViewController in Frameworks */,
 				E8BF3AD92A10B0C400F0D97A /* Localize_Swift in Frameworks */,
@@ -134,6 +216,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E832FF352A4E9E8400548120 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				E89171802A4AFCC1000223C2 /* SocialMedia.swift */,
+				E89171822A4AFCD0000223C2 /* SocialMedia.xib */,
+				E832FF362A4E9EA200548120 /* UserCardTableViewCell.swift */,
+				E832FF372A4E9EA200548120 /* UserCardTableViewCell.xib */,
+				E832FF432A4ECDD600548120 /* EmptyTableView.swift */,
+				E832FF452A4ECDE300548120 /* EmptyTableView.xib */,
+				E87A42FC2A50A47000658AB6 /* CardTableViewCell.swift */,
+				E87A42FD2A50A47000658AB6 /* CardTableViewCell.xib */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
 		E83A6A982A33455D0074D2F8 /* JWT */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,14 +244,88 @@
 		E86E17BF2A1940950053A1E9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E87A43002A514C5700658AB6 /* Fireworks */,
 				E83A6A982A33455D0074D2F8 /* JWT */,
 				E86E17C02A1940A40053A1E9 /* Menodag+String.swift */,
 				E86E17C22A19410B0053A1E9 /* Menodag+View.swift */,
 				E86E17C72A194A780053A1E9 /* Menodag+UIColor.swift */,
 				E83A6A9F2A34296A0074D2F8 /* Swap + FirebaseUsers.swift */,
 				E89171432A45C5EE000223C2 /* Constants.swift */,
+				E89171872A4C4A93000223C2 /* Menodag+UIImage.swift */,
+				E891718C2A4D57ED000223C2 /* Menodag+UITextField.swift */,
+				E87A43872A5164DD00658AB6 /* Menodag+Keychain.swift */,
+				E87A43892A51829400658AB6 /* Menodag+Array.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E87A43002A514C5700658AB6 /* Fireworks */ = {
+			isa = PBXGroup;
+			children = (
+				E87A43682A514C8800658AB6 /* Classic Firework */,
+				E87A43632A514C8800658AB6 /* Fountain Firework */,
+				E87A435A2A514C8800658AB6 /* Model */,
+				E87A43532A514C8800658AB6 /* Spark Views */,
+				E87A43582A514C8800658AB6 /* System Extensions */,
+			);
+			path = Fireworks;
+			sourceTree = "<group>";
+		};
+		E87A43532A514C8800658AB6 /* Spark Views */ = {
+			isa = PBXGroup;
+			children = (
+				E87A43542A514C8800658AB6 /* ImageSparkViewFactory.swift */,
+				E87A43552A514C8800658AB6 /* CircleColorSparkViewFactory.swift */,
+				E87A43562A514C8800658AB6 /* CircleColorSparkView.swift */,
+				E87A43572A514C8800658AB6 /* ImageSparkView.swift */,
+			);
+			path = "Spark Views";
+			sourceTree = "<group>";
+		};
+		E87A43582A514C8800658AB6 /* System Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E87A43592A514C8800658AB6 /* CGPoint+Extensions.swift */,
+			);
+			path = "System Extensions";
+			sourceTree = "<group>";
+		};
+		E87A435A2A514C8800658AB6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E87A435B2A514C8800658AB6 /* SparkTrajectory.swift */,
+				E87A435C2A514C8800658AB6 /* SparkTrajectoryFactory.swift */,
+				E87A435D2A514C8800658AB6 /* FireworkSparkScheduler.swift */,
+				E87A435E2A514C8800658AB6 /* Firework.swift */,
+				E87A435F2A514C8800658AB6 /* SparkViewAnimator.swift */,
+				E87A43602A514C8800658AB6 /* SparkView.swift */,
+				E87A43612A514C8800658AB6 /* SparkViewFactory.swift */,
+				E87A43622A514C8800658AB6 /* FireworkSpark.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E87A43632A514C8800658AB6 /* Fountain Firework */ = {
+			isa = PBXGroup;
+			children = (
+				E87A43642A514C8800658AB6 /* FountainFirework.swift */,
+				E87A43652A514C8800658AB6 /* FountainFireworkAnimator.swift */,
+				E87A43662A514C8800658AB6 /* FountainFireworkController.swift */,
+				E87A43672A514C8800658AB6 /* FountainSparkTrajectoryFactory.swift */,
+			);
+			path = "Fountain Firework";
+			sourceTree = "<group>";
+		};
+		E87A43682A514C8800658AB6 /* Classic Firework */ = {
+			isa = PBXGroup;
+			children = (
+				E87A43692A514C8800658AB6 /* ClassicSparkTrajectoryFactoryProtocol.swift */,
+				E87A436A2A514C8800658AB6 /* ClassicFireworkController.swift */,
+				E87A436B2A514C8800658AB6 /* ClassicSparkTrajectoryFactory.swift */,
+				E87A436C2A514C8800658AB6 /* ClassicFireworkAnimator.swift */,
+				E87A436D2A514C8800658AB6 /* ClassicFirework.swift */,
+			);
+			path = "Classic Firework";
 			sourceTree = "<group>";
 		};
 		E891713D2A45BB78000223C2 /* PersonalInfo */ = {
@@ -162,8 +333,6 @@
 			children = (
 				E891713E2A45BB8A000223C2 /* PersonalInfoViewController.swift */,
 				E891717E2A4AE740000223C2 /* BusinessInfoViewController.swift */,
-				E89171802A4AFCC1000223C2 /* SocialMedia.swift */,
-				E89171822A4AFCD0000223C2 /* SocialMedia.xib */,
 			);
 			path = PersonalInfo;
 			sourceTree = "<group>";
@@ -172,8 +341,20 @@
 			isa = PBXGroup;
 			children = (
 				E891714C2A46A269000223C2 /* UserCard.swift */,
+				E87A42FA2A506ED200658AB6 /* ProductHistory.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E89171892A4C78D2000223C2 /* MainControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E891718A2A4C78EC000223C2 /* HomePageViewController.swift */,
+				E832FF472A4EEA4A00548120 /* ProfileViewController.swift */,
+				E87A42EF2A505A8E00658AB6 /* ProductsViewController.swift */,
+				E87A438B2A51917C00658AB6 /* SearchResultsViewController.swift */,
+			);
+			path = MainControllers;
 			sourceTree = "<group>";
 		};
 		E8BF3A9A2A0FEBD900F0D97A = {
@@ -195,6 +376,8 @@
 		E8BF3AA52A0FEBD900F0D97A /* menodag */ = {
 			isa = PBXGroup;
 			children = (
+				E832FF352A4E9E8400548120 /* Xibs */,
+				E89171892A4C78D2000223C2 /* MainControllers */,
 				E891714B2A46A260000223C2 /* Models */,
 				E891713D2A45BB78000223C2 /* PersonalInfo */,
 				E86E17BF2A1940950053A1E9 /* Extensions */,
@@ -286,6 +469,10 @@
 				E89171492A461B96000223C2 /* InitialsImageView */,
 				E89171772A4ABCA9000223C2 /* IQKeyboardManagerSwift */,
 				E891717C2A4AD919000223C2 /* Toast */,
+				E89171852A4C305F000223C2 /* ViewAnimator */,
+				E891718F2A4D6523000223C2 /* HMSegmentedControl */,
+				E832FF3B2A4EA7FF00548120 /* Longinus */,
+				E87A43852A5161D700658AB6 /* KeychainStore */,
 			);
 			productName = menodag;
 			productReference = E8BF3AA32A0FEBD900F0D97A /* menodag.app */;
@@ -328,6 +515,10 @@
 				E89171482A461B95000223C2 /* XCRemoteSwiftPackageReference "InitialsImageView" */,
 				E89171762A4ABCA9000223C2 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				E891717B2A4AD919000223C2 /* XCRemoteSwiftPackageReference "toast-swift" */,
+				E89171842A4C305E000223C2 /* XCRemoteSwiftPackageReference "ViewAnimator" */,
+				E891718E2A4D6523000223C2 /* XCRemoteSwiftPackageReference "HMSegmentedControl" */,
+				E832FF3A2A4EA7FF00548120 /* XCRemoteSwiftPackageReference "Longinus" */,
+				E87A43842A5161D700658AB6 /* XCRemoteSwiftPackageReference "KeychainStore" */,
 			);
 			productRefGroup = E8BF3AA42A0FEBD900F0D97A /* Products */;
 			projectDirPath = "";
@@ -347,7 +538,9 @@
 				E8BF3AC82A0FF4DA00F0D97A /* Poppins-Light.ttf in Resources */,
 				E8BF3AC72A0FF4DA00F0D97A /* Poppins-ExtraBold.ttf in Resources */,
 				E8BF3AD42A0FF4E700F0D97A /* Tajawal-ExtraLight.ttf in Resources */,
+				E87A42FF2A50A47000658AB6 /* CardTableViewCell.xib in Resources */,
 				E8BF3AD22A0FF4E700F0D97A /* Tajawal-Regular.ttf in Resources */,
+				E832FF392A4E9EA200548120 /* UserCardTableViewCell.xib in Resources */,
 				E86E17BE2A18F7DA0053A1E9 /* GoogleService-Info.plist in Resources */,
 				E8BF3AD32A0FF4E700F0D97A /* Tajawal-Medium.ttf in Resources */,
 				E89171832A4AFCD0000223C2 /* SocialMedia.xib in Resources */,
@@ -363,6 +556,7 @@
 				E8BF3AD52A0FF4E700F0D97A /* Tajawal-Bold.ttf in Resources */,
 				E8BF3AC32A0FF4DA00F0D97A /* Poppins-Regular.ttf in Resources */,
 				E8BF3AE22A12111F00F0D97A /* localisation.json in Resources */,
+				E832FF462A4ECDE300548120 /* EmptyTableView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,22 +568,56 @@
 			buildActionMask = 2147483647;
 			files = (
 				E86E17C12A1940A40053A1E9 /* Menodag+String.swift in Sources */,
+				E87A438C2A51917C00658AB6 /* SearchResultsViewController.swift in Sources */,
+				E87A43742A514C8800658AB6 /* SparkTrajectoryFactory.swift in Sources */,
 				E83A6A9E2A33456B0074D2F8 /* JWT.swift in Sources */,
 				E8BF3AAB2A0FEBD900F0D97A /* ViewController.swift in Sources */,
+				E87A437A2A514C8800658AB6 /* FireworkSpark.swift in Sources */,
 				E86E17C32A19410B0053A1E9 /* Menodag+View.swift in Sources */,
 				E891717F2A4AE740000223C2 /* BusinessInfoViewController.swift in Sources */,
+				E832FF382A4E9EA200548120 /* UserCardTableViewCell.swift in Sources */,
 				E86E17C82A194A780053A1E9 /* Menodag+UIColor.swift in Sources */,
 				E8BF3ADB2A10B0CF00F0D97A /* MenodagFont.swift in Sources */,
+				E87A43702A514C8800658AB6 /* CircleColorSparkView.swift in Sources */,
+				E87A43882A5164DD00658AB6 /* Menodag+Keychain.swift in Sources */,
 				E83A6AA02A34296A0074D2F8 /* Swap + FirebaseUsers.swift in Sources */,
 				E8BF3AA72A0FEBD900F0D97A /* AppDelegate.swift in Sources */,
+				E891718D2A4D57ED000223C2 /* Menodag+UITextField.swift in Sources */,
+				E87A43812A514C8800658AB6 /* ClassicSparkTrajectoryFactory.swift in Sources */,
+				E87A43822A514C8800658AB6 /* ClassicFireworkAnimator.swift in Sources */,
+				E87A437D2A514C8800658AB6 /* FountainFireworkController.swift in Sources */,
+				E87A43792A514C8800658AB6 /* SparkViewFactory.swift in Sources */,
+				E87A43722A514C8800658AB6 /* CGPoint+Extensions.swift in Sources */,
+				E87A436F2A514C8800658AB6 /* CircleColorSparkViewFactory.swift in Sources */,
 				E891714D2A46A269000223C2 /* UserCard.swift in Sources */,
+				E87A43752A514C8800658AB6 /* FireworkSparkScheduler.swift in Sources */,
 				E891713F2A45BB8A000223C2 /* PersonalInfoViewController.swift in Sources */,
 				E83A6A9D2A33456B0074D2F8 /* JWTDecodeError.swift in Sources */,
 				E89171812A4AFCC1000223C2 /* SocialMedia.swift in Sources */,
+				E87A43802A514C8800658AB6 /* ClassicFireworkController.swift in Sources */,
+				E87A437B2A514C8800658AB6 /* FountainFirework.swift in Sources */,
+				E832FF482A4EEA4A00548120 /* ProfileViewController.swift in Sources */,
 				E8BF3AA92A0FEBD900F0D97A /* SceneDelegate.swift in Sources */,
+				E87A437E2A514C8800658AB6 /* FountainSparkTrajectoryFactory.swift in Sources */,
+				E87A43782A514C8800658AB6 /* SparkView.swift in Sources */,
 				E89171442A45C5EE000223C2 /* Constants.swift in Sources */,
+				E87A436E2A514C8800658AB6 /* ImageSparkViewFactory.swift in Sources */,
+				E87A437C2A514C8800658AB6 /* FountainFireworkAnimator.swift in Sources */,
+				E87A42F02A505A8E00658AB6 /* ProductsViewController.swift in Sources */,
+				E832FF442A4ECDD600548120 /* EmptyTableView.swift in Sources */,
+				E87A43762A514C8800658AB6 /* Firework.swift in Sources */,
+				E87A437F2A514C8800658AB6 /* ClassicSparkTrajectoryFactoryProtocol.swift in Sources */,
+				E87A43732A514C8800658AB6 /* SparkTrajectory.swift in Sources */,
 				E83A6A9C2A33456B0074D2F8 /* JWTDecode.swift in Sources */,
+				E87A438A2A51829400658AB6 /* Menodag+Array.swift in Sources */,
+				E87A42FE2A50A47000658AB6 /* CardTableViewCell.swift in Sources */,
 				E8BF3AE42A12152800F0D97A /* LocalisationModel.swift in Sources */,
+				E87A42FB2A506ED200658AB6 /* ProductHistory.swift in Sources */,
+				E87A43832A514C8800658AB6 /* ClassicFirework.swift in Sources */,
+				E89171882A4C4A93000223C2 /* Menodag+UIImage.swift in Sources */,
+				E87A43772A514C8800658AB6 /* SparkViewAnimator.swift in Sources */,
+				E87A43712A514C8800658AB6 /* ImageSparkView.swift in Sources */,
+				E891718B2A4C78EC000223C2 /* HomePageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,6 +845,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E832FF3A2A4EA7FF00548120 /* XCRemoteSwiftPackageReference "Longinus" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/KittenYang/Longinus.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		E83FC9152A21169600E6AA96 /* XCRemoteSwiftPackageReference "BJOTPViewController" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/BadhanGanesh/BJOTPViewController.git";
@@ -655,6 +891,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
+			};
+		};
+		E87A43842A5161D700658AB6 /* XCRemoteSwiftPackageReference "KeychainStore" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JuanjoArreola/KeychainStore.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
 			};
 		};
 		E89171402A45C2BC000223C2 /* XCRemoteSwiftPackageReference "Hero" */ = {
@@ -697,6 +941,22 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		E89171842A4C305E000223C2 /* XCRemoteSwiftPackageReference "ViewAnimator" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marcosgriselli/ViewAnimator.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		E891718E2A4D6523000223C2 /* XCRemoteSwiftPackageReference "HMSegmentedControl" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/HeshamMegid/HMSegmentedControl.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		E8BF3AD72A10B0C400F0D97A /* XCRemoteSwiftPackageReference "Localize-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/marmelroy/Localize-Swift.git";
@@ -716,6 +976,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E832FF3B2A4EA7FF00548120 /* Longinus */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E832FF3A2A4EA7FF00548120 /* XCRemoteSwiftPackageReference "Longinus" */;
+			productName = Longinus;
+		};
 		E83FC9162A21169600E6AA96 /* BJOTPViewController */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E83FC9152A21169600E6AA96 /* XCRemoteSwiftPackageReference "BJOTPViewController" */;
@@ -766,6 +1031,11 @@
 			package = E86E17C42A1949440053A1E9 /* XCRemoteSwiftPackageReference "UIGradient" */;
 			productName = UIGradient;
 		};
+		E87A43852A5161D700658AB6 /* KeychainStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E87A43842A5161D700658AB6 /* XCRemoteSwiftPackageReference "KeychainStore" */;
+			productName = KeychainStore;
+		};
 		E89171412A45C2BD000223C2 /* Hero */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E89171402A45C2BC000223C2 /* XCRemoteSwiftPackageReference "Hero" */;
@@ -790,6 +1060,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E891717B2A4AD919000223C2 /* XCRemoteSwiftPackageReference "toast-swift" */;
 			productName = Toast;
+		};
+		E89171852A4C305F000223C2 /* ViewAnimator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E89171842A4C305E000223C2 /* XCRemoteSwiftPackageReference "ViewAnimator" */;
+			productName = ViewAnimator;
+		};
+		E891718F2A4D6523000223C2 /* HMSegmentedControl */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E891718E2A4D6523000223C2 /* XCRemoteSwiftPackageReference "HMSegmentedControl" */;
+			productName = HMSegmentedControl;
 		};
 		E8BF3AD82A10B0C400F0D97A /* Localize_Swift */ = {
 			isa = XCSwiftPackageProductDependency;

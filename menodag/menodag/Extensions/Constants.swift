@@ -13,4 +13,6 @@ enum HeroIDsConstants:String {
     case headerLabel = "headerLabel"
     case subHeaderLabel = "subHeaderLabel"
     case phoneTextField = "phoneTextField"
+    case firstNameTextField = "firstNameTextField"
+    case lastNameTextField = "lastNameTextField"
 }

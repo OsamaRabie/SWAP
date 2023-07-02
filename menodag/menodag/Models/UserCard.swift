@@ -8,8 +8,13 @@
 import Foundation
 import Firebase
 import FirebaseDatabase
+import ContactsUI
 // MARK: - User
-struct Card: Codable {
+struct Card: Codable,Equatable {
+    static func == (lhs: Card, rhs: Card) -> Bool {
+        return lhs.firebaseKey ?? "" == rhs.firebaseKey ?? ""
+    }
+    
     var firebaseKey: String?
     var contactData: ContactData?
     var personalData: PersonalData?
@@ -20,6 +25,23 @@ struct Card: Codable {
         case contactData = "ContactData"
         case personalData = "PersonalData"
         case professionalData = "ProfessionalData"
+    }
+    
+    
+    func valueFor(socialMediaType:SocialMediaType) -> String {
+        switch socialMediaType {
+            
+        case .Facebook:
+            return professionalData?.faceBook ?? ""
+        case .Linkedin:
+            return professionalData?.linkedIn ?? ""
+        case .Github:
+            return professionalData?.github ?? ""
+        case .Twitter:
+            return professionalData?.twitter ?? ""
+        case .Dribble:
+            return professionalData?.dribble ?? ""
+        }
     }
 }
 
@@ -38,6 +60,21 @@ extension Card {
               let userValues:[String:Any] = user[userKey] as? [String:Any],
               let userData:Data = try? JSONSerialization.data(withJSONObject: userValues, options: JSONSerialization.WritingOptions.prettyPrinted),
               let cardModel:Card = try? .init(data: userData, fireBaseKey: userKey) else { return nil }
+        // Return the user we found with the provided value
+        return cardModel
+    }
+    
+    
+    /// Creates a card model from a given firebase snapshot
+    /// - Parameter snapShot: The snapshot you get from firebase query
+    /// - Parameter key: The key if we know it already
+    /// - Returns: The card data if correcly parsed and nil otherwise
+    static func createCardFrom(snapShot: DataSnapshot?, key:String) -> Card? {
+        // Check if there is a user with the provided value
+        guard let snapshot = snapShot,
+              let user = snapshot.value as? [String:Any],
+              let userData:Data = try? JSONSerialization.data(withJSONObject: user, options: JSONSerialization.WritingOptions.prettyPrinted),
+              let cardModel:Card = try? .init(data: userData, fireBaseKey: key) else { return nil }
         // Return the user we found with the provided value
         return cardModel
     }
@@ -76,7 +113,7 @@ extension Card {
         case .dribble:
             nonNullCard.professionalData?.dribble = value
         case .gitHub:
-            nonNullCard.professionalData?.gitHub = value
+            nonNullCard.professionalData?.github = value
         }
         
         SwapFirebaseUsers.currentUserCard = nonNullCard
@@ -124,6 +161,28 @@ extension Card {
         return String(data: try self.jsonData(), encoding: encoding)
     }
     
+    func jsonDictionary() -> [String: Any]? {
+            do {
+                return try JSONSerialization.jsonObject(with: jsonData(), options: []) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        return nil
+    }
+    
+    func toContact(imageData:Data?) -> CNMutableContact {
+        let contact = CNMutableContact()
+        contact.emailAddresses  = [CNLabeledValue(label:CNLabelWork , value: (self.contactData?.email ?? "") as NSString)]
+        contact.phoneNumbers    = [CNLabeledValue(label:CNLabelWork , value: .init(stringValue:self.contactData?.phone ?? ""))]
+        contact.givenName       = self.personalData?.fistName ?? ""
+        contact.familyName      = self.personalData?.lastName ?? ""
+        contact.imageData       = imageData
+        contact.jobTitle        = self.professionalData?.title ?? ""
+        contact.departmentName  = self.professionalData?.company ?? ""
+        contact.socialProfiles  = [CNLabeledValue(label: "Facebook", value: CNSocialProfile(urlString: "", username: self.professionalData?.faceBook ?? "", userIdentifier: nil, service: CNSocialProfileServiceFacebook)), CNLabeledValue(label: "Linkedin", value: CNSocialProfile(urlString: "", username: self.professionalData?.linkedIn ?? "", userIdentifier: nil, service: CNSocialProfileServiceLinkedIn)), CNLabeledValue(label: "Twitter", value: CNSocialProfile(urlString: "", username: self.professionalData?.twitter ?? "", userIdentifier: nil, service: CNSocialProfileServiceTwitter))]
+        return contact
+    }
+    
     /// Will decide if the user has valid email and phone data attached to its profile
     /// - Returns: True, if the current user has correct ohone and email data
     func hasValidContactData() -> Bool {
@@ -143,6 +202,18 @@ extension Card {
               let userName:String = self.personalData?.userName,
               !userName.isEmpty,
               userName.count > 3 else { return false }
+        return true
+    }
+    
+    /// Will decide if the user has valid profession data including job & company
+    /// - Returns: True, if the current user has correct job & company
+    func hasValidProfessionData() -> Bool {
+        guard let job:String = self.professionalData?.company,
+              !job.isEmpty,
+              job.count > 3,
+              let company:String = self.professionalData?.title,
+              !company.isEmpty,
+              company.count > 3 else { return false }
         return true
     }
     
@@ -174,11 +245,11 @@ extension Card {
             // Not required
             return(true,"")
         case .company:
-            // Not required
-            return(true,"")
+            isValid = value?.count ?? 0 > 3
+            errorMessage = isValid ? "" : sharedLocalisationManager.localization.errors.companyError
         case .title:
-            // Not required
-            return(true,"")
+            isValid = value?.count ?? 0 > 3
+            errorMessage = isValid ? "" : sharedLocalisationManager.localization.errors.jobError
         case .linkedIn:
             // Not required
             return(true,"")
@@ -202,7 +273,8 @@ extension Card {
 
 // MARK: - ContactData
 struct ContactData: Codable {
-    var phone, email: String?
+    var phone, email: String
+    var url: String?
 }
 
 // MARK: ContactData convenience initializers and mutators
@@ -224,12 +296,14 @@ extension ContactData {
     }
     
     func with(
-        phone: String?? = nil,
-        email: String?? = nil
+        phone:  String = "",
+        email:  String = "",
+        url:    String? = nil
     ) -> ContactData {
         return ContactData(
-            phone: phone ?? self.phone,
-            email: email ?? self.email
+            phone: phone,
+            email: email,
+            url:   url
         )
     }
     
@@ -244,7 +318,7 @@ extension ContactData {
 
 // MARK: - PersonalData
 struct PersonalData: Codable {
-    var fistName, lastName, userName, photo: String?
+    var fistName, lastName, userName, photo: String
 }
 
 // MARK: PersonalData convenience initializers and mutators
@@ -266,16 +340,16 @@ extension PersonalData {
     }
     
     func with(
-        fistName: String?? = nil,
-        lastName: String?? = nil,
-        userName: String?? = nil,
-        photo: String?? = nil
+        fistName: String = "",
+        lastName: String = "",
+        userName: String = "",
+        photo: String = ""
     ) -> PersonalData {
         return PersonalData(
-            fistName: fistName ?? self.fistName,
-            lastName: lastName ?? self.lastName,
-            userName: userName ?? self.userName,
-            photo: photo ?? self.photo
+            fistName: fistName,
+            lastName: lastName,
+            userName: userName,
+            photo: photo
         )
     }
     
@@ -290,8 +364,8 @@ extension PersonalData {
 
 // MARK: - ProfessionalData
 struct ProfessionalData: Codable {
-    var company, title, linkedIn, faceBook: String?
-    var twitter, dribble, gitHub: String?
+    var company, title, linkedIn, faceBook: String
+    var twitter, dribble, github: String?
 }
 
 // MARK: ProfessionalData convenience initializers and mutators
@@ -313,22 +387,22 @@ extension ProfessionalData {
     }
     
     func with(
-        company: String?? = nil,
-        title: String?? = nil,
-        linkedIn: String?? = nil,
-        faceBook: String?? = nil,
-        twitter: String?? = nil,
-        dribble: String?? = nil,
-        gitHub: String?? = nil
+        company: String = "",
+        title: String = "",
+        linkedIn: String = "",
+        faceBook: String = "",
+        twitter: String = "",
+        dribble: String = "",
+        github: String? = ""
     ) -> ProfessionalData {
         return ProfessionalData(
-            company: company ?? self.company,
-            title: title ?? self.title,
-            linkedIn: linkedIn ?? self.linkedIn,
-            faceBook: faceBook ?? self.faceBook,
-            twitter: twitter ?? self.twitter,
-            dribble: dribble ?? self.dribble,
-            gitHub: gitHub ?? self.gitHub
+            company: company,
+            title: title,
+            linkedIn: linkedIn,
+            faceBook: faceBook,
+            twitter: twitter,
+            dribble: dribble,
+            github: github
         )
     }
     
